@@ -2036,7 +2036,7 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `短剧大师v6.1_完整功能介绍.pdf` | 完整功能介绍（HTML竖屏演示文稿，10页暗色影视风） |
+| `短剧大师v6.1_完整功能介绍.pdf` | 完整功能介绍（HTML竖屏演示文稿，11页中英双语暗色影视风） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/changelog.md` | 版本演进日志（v5.2 DCI认证后全记录） |
 | `references/github-sync.md` | GitHub双仓库SSH同步+Git恢复指南 |

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>短剧大师™ v6.1 · Complete Feature Showcase / 完整功能介绍</title>
+<style>
+:root {
+  --gold: #D4A843; --warm-gold: #F0C060; --bone: #E8DDD0;
+  --dark-bg: #0a0a0f; --card-bg: #111118; --border: #1a1a28;
+  --text: #ccc; --text-dim: #888;
+  --purple: #8B5CF6; --cyan: #06B6D4; --green: #22C55E; --red: #EF4444;
+  --slide-w: 390px; --slide-h: 844px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#050508; color:var(--text); font-family:'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif; display:flex; flex-direction:column; align-items:center; }
+.slide { width:var(--slide-w); min-height:var(--slide-h); background:linear-gradient(180deg,#0a0a12,#0d0d18 40%,#0a0a12); border:1px solid var(--border); border-radius:12px; margin:24px 0; padding:44px 26px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; }
+.slide::before { content:''; position:absolute; top:0;left:0;right:0;height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.4; }
+.cover { text-align:center; }
+.cover h1 { font-size:2.2rem; background:linear-gradient(180deg,var(--warm-gold),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900; letter-spacing:3px; }
+.cover .sub { font-size:0.9rem; color:var(--text-dim); margin-top:6px; }
+.cover .tagline { font-size:0.85rem; color:var(--warm-gold); margin:20px 0; line-height:1.8; }
+.cover .en { font-size:0.7rem; color:var(--text-dim); }
+h2 { font-size:1.3rem; color:var(--warm-gold); margin-bottom:6px; font-weight:800; }
+.en-sub { font-size:0.65rem; color:var(--text-dim); margin-bottom:10px; }
+.stats-row { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }
+.stat { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:10px 8px; text-align:center; flex:1; min-width:60px; }
+.stat .num { font-size:1.3rem; font-weight:900; color:var(--warm-gold); }
+.stat .label { font-size:0.55rem; color:var(--text-dim); margin-top:2px; }
+.masters-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:4px; margin:8px 0; }
+.master-card { background:var(--card-bg); border:1px solid var(--border); border-radius:6px; padding:7px 5px; text-align:center; }
+.master-card .name { font-size:0.7rem; color:var(--warm-gold); font-weight:700; }
+.master-card .en { font-size:0.5rem; color:var(--text-dim); }
+.section-tag { display:inline-block; padding:2px 8px; border-radius:10px; font-size:0.55rem; font-weight:700; letter-spacing:1px; margin-bottom:4px; }
+.tag-create { background:rgba(212,168,67,0.15); color:var(--gold); }
+.tag-quality { background:rgba(139,92,246,0.15); color:var(--purple); }
+.tag-tech { background:rgba(6,182,212,0.15); color:var(--cyan); }
+.tag-new { background:rgba(34,197,94,0.15); color:var(--green); }
+.highlight { background:linear-gradient(90deg,rgba(212,168,67,0.1),transparent); border-left:2px solid var(--gold); padding:8px 10px; margin:8px 0; border-radius:0 6px 6px 0; font-size:0.72rem; line-height:1.5; }
+.highlight .en { font-size:0.6rem; color:var(--text-dim); }
+.saving-highlight { background:linear-gradient(90deg,rgba(34,197,94,0.1),transparent); border-left:2px solid var(--green); padding:8px 10px; margin:8px 0; border-radius:0 6px 6px 0; font-size:0.72rem; line-height:1.5; }
+.saving-highlight .en { font-size:0.6rem; color:var(--text-dim); }
+.table { width:100%; border-collapse:collapse; margin:8px 0; font-size:0.6rem; }
+.table th { background:var(--card-bg); color:var(--gold); padding:4px 3px; text-align:left; font-weight:700; border-bottom:1px solid var(--border); }
+.table td { padding:3px; border-bottom:1px solid rgba(255,255,255,0.04); }
+.flow { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:10px; margin:8px 0; font-size:0.62rem; line-height:1.5; font-family:'SF Mono',Menlo,monospace; color:var(--text-dim); white-space:pre; overflow-x:auto; }
+.footer-bar { position:absolute; bottom:12px; left:50%; transform:translateX(-50%); font-size:0.48rem; color:var(--text-dim); letter-spacing:1px; white-space:nowrap; }
+.page-num { position:absolute; top:16px; right:24px; font-size:0.55rem; color:var(--text-dim); }
+.ver-line { font-size:0.58rem; color:var(--text-dim); line-height:1.6; text-align:left; margin:0 auto; max-width:260px; }
+.big-num { font-size:2.5rem; font-weight:900; color:var(--green); text-align:center; }
+</style>
+</head>
+<body>
+
+<!-- P1: Cover / 封面 -->
+<div class="slide cover">
+  <h1>短剧大师™</h1>
+  <div class="sub">Short Drama Master v6.1</div>
+  <div class="tagline">
+    720P的prompt量 → 1080P的成片质量<br>
+    省一半token，降七成废片
+  </div>
+  <div class="en">720P prompt volume → 1080P final quality<br>Half the tokens, 70% less waste</div>
+  <div style="margin-top:24px;">
+    <span style="display:inline-block;padding:5px 16px;border:1px solid var(--gold);border-radius:16px;color:var(--gold);font-size:0.75rem;">19 Masters · 十九大师</span>
+  </div>
+  <div style="margin-top:32px;font-size:0.55rem;color:var(--text-dim);">DCI: RDCS00ANT.202606159652337429</div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master · DCI:RDCS00ANT.202606159652337429 ──</div>
+</div>
+
+<!-- P2: Data / 数据总览 -->
+<div class="slide"><div class="page-num">02</div>
+  <h2>📊 数据总览 / By The Numbers</h2>
+  <div class="stats-row">
+    <div class="stat"><div class="num">19</div><div class="label">大师/Masters</div></div>
+    <div class="stat"><div class="num">3,400+</div><div class="label">行/Lines</div></div>
+    <div class="stat"><div class="num">180KB</div><div class="label">规则引擎</div></div>
+    <div class="stat"><div class="num">~73%</div><div class="label">省Token</div></div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">14</div><div class="label">质量关/Gates</div></div>
+    <div class="stat"><div class="num">20</div><div class="label">维穷举/Dims</div></div>
+    <div class="stat"><div class="num">15</div><div class="label">附录/Appdx</div></div>
+    <div class="stat"><div class="num">321</div><div class="label">剧本库</div></div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">875</div><div class="label">蒸馏案例</div></div>
+    <div class="stat"><div class="num">20</div><div class="label">运镜百科</div></div>
+    <div class="stat"><div class="num">6</div><div class="label">维面部精控</div></div>
+    <div class="stat"><div class="num">60→15%</div><div class="label">废片率</div></div>
+  </div>
+  <div class="saving-highlight">
+    <strong>720P量→1080P质</strong>：精密工程替代暴力堆料，60集省~73% API调用<br>
+    <span class="en">Precision engineering replaces brute force: ~73% token savings per 60 episodes</span>
+  </div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P3: 19 Masters / 十九大师 -->
+<div class="slide"><div class="page-num">03</div>
+  <h2>🏛️ 十九大师 / 19 Masters</h2>
+  <div class="en-sub">Call = Summon · 调用即召唤</div>
+  
+  <div class="section-tag tag-create">创作军团 / Creation (5)</div>
+  <div class="masters-grid">
+    <div class="master-card"><div class="name">①剧本/Script</div></div>
+    <div class="master-card"><div class="name">②武术/Combat</div></div>
+    <div class="master-card"><div class="name">③暗线/Thread</div></div>
+    <div class="master-card"><div class="name">④节奏/Rhythm</div></div>
+    <div class="master-card"><div class="name">⑤交付/Delivery</div></div>
+  </div>
+
+  <div class="section-tag tag-quality">品控军团 / QA (6)</div>
+  <div class="masters-grid">
+    <div class="master-card"><div class="name">⑥质检/QA</div></div>
+    <div class="master-card"><div class="name">⑦肌肉/Muscle</div></div>
+    <div class="master-card"><div class="name">⑧构图/Comp</div></div>
+    <div class="master-card"><div class="name">⑨运镜/Camera</div></div>
+    <div class="master-card"><div class="name">⑩废片/Waste</div></div>
+    <div class="master-card"><div class="name">⑪连贯/Cohere</div></div>
+  </div>
+
+  <div class="section-tag tag-tech">技术军团 / Tech (8)</div>
+  <div class="masters-grid">
+    <div class="master-card"><div class="name">⑫灯光/Light</div></div>
+    <div class="master-card"><div class="name">⑬转场/Trans</div></div>
+    <div class="master-card"><div class="name">⑭矩阵/Matrix</div></div>
+    <div class="master-card"><div class="name">⑮配乐/Score</div></div>
+    <div class="master-card"><div class="name">⑯对白/Dialog</div></div>
+    <div class="master-card"><div class="name">⑰命名/Naming</div></div>
+    <div class="master-card"><div class="name">⑱审核/Censor</div></div>
+    <div class="master-card" style="border-color:var(--green);"><div class="name" style="color:var(--green);">⑲省钱/Save 🆕</div></div>
+  </div>
+
+  <div class="highlight">
+    「十九大师全军出击」→ 剧本到提交一条龙 / Full pipeline in one command
+  </div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P4: Savings Master / 省钱大师 -->
+<div class="slide"><div class="page-num">04</div>
+  <h2>🆕 省钱大师 / Savings Master</h2>
+  <div class="en-sub">720P→1080P · 第十九位大师 · The 19th Master</div>
+  
+  <table class="table">
+    <tr><th>维度/Dimension</th><th>机制/Mechanism</th><th>效果/Savings</th></tr>
+    <tr><td>🛡️ 预审拦截</td><td>不达标→提交不了API</td><td>0 token浪费</td></tr>
+    <tr><td>📐 精密Prompt</td><td>五段式≤400字</td><td>720P量→1080P质</td></tr>
+    <tr><td>🗑️ BX降废片</td><td>9法则+四级分类</td><td>60%→15%废片率</td></tr>
+    <tr><td>🔍 逐镜提交</td><td>一镜废≠全剧废</td><td>精准重抽</td></tr>
+    <tr><td>🔒 角色锁定</td><td>LoRA+三视图</td><td>60集不换脸</td></tr>
+  </table>
+
+  <div class="saving-highlight">
+    <div class="big-num">~73%</div>
+    <div style="text-align:center;">API调用节省 / Token Savings<br><span class="en">60 episodes: 900 calls → 306 calls</span></div>
+  </div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P5: Review System / 会审 -->
+<div class="slide"><div class="page-num">05</div>
+  <h2>🏛️ 会审系统 / Review System</h2>
+  <div class="en-sub">剧本一到 · 全员出诊 / Script arrives → all masters diagnose</div>
+  
+  <table class="table">
+    <tr><th>模式/Mode</th><th>示例/Example</th></tr>
+    <tr><td>🩺 单大师/Solo</td><td>「暗线大师，查E01-E10代价」</td></tr>
+    <tr><td>🤝 三大师/Trio</td><td>「武术+运镜+省钱，审E35」</td></tr>
+    <tr><td>⚔️ 全军/Full Army</td><td>「十九大师会审E01-E60」</td></tr>
+  </table>
+
+  <div class="flow">剧本提交 / Script Submitted
+    ├─ 19大师并行审阅 / 19 masters review in parallel
+    ├─ 每位产出：判定+行号+修复建议 / Each: verdict+line+fix
+    ├─ 合并会审报告 / Merged Review Report
+    │   🔴阻塞/Block → 🟠重要/Important → 🟡建议/Suggest → 🟢优秀/Great
+    └─ 修改重审 or 直接通过 / Revise or Pass</div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P6: Why 720P→1080P -->
+<div class="slide"><div class="page-num">06</div>
+  <h2>💎 为什么720P→1080P？</h2>
+  <div class="en-sub">Why 720P input → 1080P output?</div>
+
+  <div class="saving-highlight">
+    <strong>传统AI短剧 / Traditional:</strong><br>
+    长prompt硬砸 → 废片率>60% → 反复重抽烧钱 → 角色脸变来变去<br>
+    <span class="en">Long prompts → >60% waste → costly retries → inconsistent characters</span>
+  </div>
+  
+  <div class="highlight">
+    <strong>短剧大师™ / Our Way:</strong><br>
+    精密prompt(≤400字) + 19道预审 + BX Protocol → 废片率<15% → 一次跑对<br>
+    <span class="en">Compact prompts + 19 pre-checks + BX Protocol → <15% waste → first-pass success</span>
+  </div>
+
+  <table class="table">
+    <tr><th></th><th>传统/Traditional</th><th>短剧大师™</th></tr>
+    <tr><td>废片率 / Waste</td><td style="color:var(--red);">>60%</td><td style="color:var(--green);"><15%</td></tr>
+    <tr><td>60集API调用</td><td style="color:var(--red);">~900次</td><td style="color:var(--green);">~306次</td></tr>
+    <tr><td>角色一致性</td><td>🤷 随机/Random</td><td style="color:var(--green);">🔒 锁定/Locked</td></tr>
+    <tr><td>预审闸门</td><td>❌ 无/None</td><td style="color:var(--green);">✅ 19大师</td></tr>
+  </table>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P7: Engine / 四阶段引擎 -->
+<div class="slide"><div class="page-num">07</div>
+  <h2>⚙️ 四阶段引擎 / 4-Phase Engine</h2>
+  <div class="flow">一句话创意 / One Sentence
+    │
+    ├─ Phase 1 剧本创作 / Script Creation
+    │  6步工作流 · 9层规则 · 875蒸馏 · 321加密剧本
+    │
+    ├─ Phase 2 剧本升级 / Script Enhancement
+    │  武打L1-L3 · 暗线A/B/C/D · 65s爆款公式
+    │  尾钩五类 · 代价曲线 · 反派六档叠压
+    │
+    ├─ Phase 3 制作交付 / Production
+    │  API四脚本 · 搬运工模式 · 逐镜提交 · 20轮自检
+    │
+    └─ Phase 4 质量管控 / Quality Control
+       SQ0→SQ12十四道关卡 · 一关不过全剧不交
+       One gate failed → entire episode blocked</div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P8: Evolution / 午夜自进化 -->
+<div class="slide"><div class="page-num">08</div>
+  <h2>🌙 午夜自进化 / Self-Evolution</h2>
+  <div class="en-sub">每日00:00 · 19大师独立行动 / Daily 00:00 · 19 masters act independently</div>
+  
+  <div class="flow">午夜00:00触发 / Midnight Trigger
+    ├─ 19大师并行行动 / 19 masters in parallel
+    │   ├─ 🌐 穷举搜索自己的领域 / Search their domain
+    │   ├─ 📥 有新发现→更新附录 / New→update appendices
+    │   └─ 🔧 无新发现→优化平台对接精度 / Else→refine precision
+    │
+    ├─ 合并→《午夜进化报告》/ Merge→Evolution Report
+    ├─ 8类逻辑自检→🔴致命自动修复 / 8 self-checks→auto-fix
+    └─ git push 双仓库 / Push to both repos</div>
+
+  <div class="highlight">
+    一个会自我进化的技能。每天变得更自洽。<br>
+    <span class="en">A skill that evolves itself. Getting more consistent every day.</span>
+  </div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P9: Appendices / 附录 -->
+<div class="slide"><div class="page-num">09</div>
+  <h2>🧬 15大附录 / 15 Appendices</h2>
+  <table class="table">
+    <tr><th>#</th><th>名称/Name</th><th>核心/Core</th></tr>
+    <tr><td>A</td><td>剧本模板/Script Template</td><td>12项交付物</td></tr>
+    <tr><td>B</td><td>角色资产/Character Assets</td><td>5类功能位</td></tr>
+    <tr><td>C</td><td>色彩光影/Color & Light</td><td>三色调体系</td></tr>
+    <tr><td>D</td><td>音频设计/Audio Design</td><td>BGM/音效/环境</td></tr>
+    <tr><td>E</td><td>广电红线/Censorship</td><td>五条红线</td></tr>
+    <tr><td>F</td><td>剧名公式/Naming Formula</td><td>24模板+6000词频</td></tr>
+    <tr><td>G</td><td>审核红线/Audit Rules</td><td>补充审查</td></tr>
+    <tr><td>H</td><td>情绪层级/Emotion Layers</td><td>二维模型</td></tr>
+    <tr><td>I</td><td>18条规律/18 Laws</td><td>329集验证</td></tr>
+    <tr><td>J</td><td>BX Protocol</td><td>降废片SOP+20运镜</td></tr>
+    <tr><td>K-O</td><td>效率/LoRA/分镜/精控</td><td>工具链</td></tr>
+    <tr><td>P</td><td>转场词典/Transitions</td><td>5种转场</td></tr>
+    <tr><td>Q</td><td>锚点法则/Anchors</td><td>7大锚点</td></tr>
+    <tr><td>R</td><td>20维矩阵/20D Matrix</td><td>四步闭环</td></tr>
+    <tr><td>S</td><td>小云雀参数/API Params</td><td>7核心参数</td></tr>
+    <tr><td>T</td><td>双平台工程/Dual Platform</td><td>统一6步公式</td></tr>
+  </table>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P10: Highlights / 亮点 -->
+<div class="slide"><div class="page-num">10</div>
+  <h2>🎯 亮点 / Highlights</h2>
+  
+  <div class="highlight">
+    <strong>1. 十九大师人格化 / 19 Masters Personified</strong><br>
+    每位大师有专长、范本、签字 / Each has domain, template, signature
+  </div>
+  <div class="saving-highlight">
+    <strong>2. 720P→1080P 🆕</strong><br>
+    精密工程替代暴力堆料，省~73% token / Precision beats brute force
+  </div>
+  <div class="highlight">
+    <strong>3. 六维肌肉级指令 / 6D Facial Control</strong><br>
+    AI短剧唯一面部精控体系 / The only facial control system in AI short drama
+  </div>
+  <div class="highlight">
+    <strong>4. 20维质量穷举 / 20D Quality Matrix</strong><br>
+    每维四步闭环，可复现方法论 / Each dimension: 4-step closed loop
+  </div>
+  <div class="highlight">
+    <strong>5. BX Protocol降废片 / Waste Reduction</strong><br>
+    9条法则+四级分类+五段式公式 / 9 laws + 4-tier + 5-segment formula
+  </div>
+  <div class="highlight">
+    <strong>6. 午夜自进化 / Self-Evolving</strong><br>
+    每天00:00自动扫描、搜索、修复、推送 / Auto-scans, fixes, pushes daily
+  </div>
+  <div class="highlight">
+    <strong>7. 不达标提交不了 / No Bad Submissions</strong><br>
+    预审不过关，API调不了 / Pre-check blocks bad content from API
+  </div>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
+</div>
+
+<!-- P11: Version + End / 版本+结尾 -->
+<div class="slide cover"><div class="page-num">11</div>
+  <h2 style="margin-bottom:12px;">版本历程 / Version History</h2>
+  <div class="ver-line">
+    v1.0 → 技能诞生 / Skill born<br>
+    v3.0 → 875蒸馏+321剧本 / Distilled cases+scripts<br>
+    v4.0 → 标准版15附录 / Standard edition<br>
+    v5.0 → 双平台工程 / Dual platform<br>
+    v5.4 → DCI数字版权 / DCI copyright<br>
+    v5.7 → 十八大师 / 18 Masters<br>
+    v5.8 → 会审+午夜进化 / Review+Evolution<br>
+    v5.9 → 独立输出范本 / Output templates<br>
+    v6.0 → 门面重写 / Full showcase<br>
+    <strong style="color:var(--warm-gold);">v6.1 → 省钱大师+全量双语 / Savings Master + Full Bilingual</strong>
+  </div>
+  <p style="margin-top:28px;font-size:0.95rem;color:var(--bone);">🎬 短剧大师™ · Short Drama Master</p>
+  <p style="font-size:0.65rem;color:var(--text-dim);">From one sentence to finished AI short drama<br>一句话 → AI微短剧成片</p>
+  <div class="footer-bar">── 短剧大师™ · Short Drama Master · DCI:RDCS00ANT.202606159652337429 ──</div>
+</div>
+
+</body>
+</html>
