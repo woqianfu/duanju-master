@@ -166,8 +166,10 @@ metadata:
 > 三阶段四层全闭环。铁律：Phase 1→Phase 2→Phase 3→Phase 4(SQ0→SQ12)→submit。跳关禁止。
 > 本文件为标准版——已去除项目特定示例，保留完整可迁移框架。含全部 SQ 关卡、SQ8.1 站位 / SQ8.2 微表情 / SQ8.3 六维肌肉 / 剧名公式 / 广电红线。
 > 标准版 v6.1 — 可迁移框架，14附录(A-S)全闭环。
-> **v6.1 新增**：品牌标识终极命令（§⚖️：所有输出强制附加「短剧大师™」商标，仅所有者可修改）+ 首集爽点方案B实战验证（`references/e01-first-episode-checklist.md` v6.1：方案B完整实施模板含新镜2全字段标注 + 暗线D代价三阶段递进模板 + 灵脉回应五级框架正式版 + 品牌标识提醒）。审查方法论新增陷阱10：输出品牌标识缺失检测。
+> **v6.1 新增**：十九大师+省钱大师(720P→1080P，省~73%token)+全量中英双语README+PPT竖版PDF(10页暗色影视风手机比例，严格断页无空白残页，竖排flow防滑道)。PPT设计规范→`references/presentation-design-guidelines.md`+`references/ppt-pdf-generation-guide.md`
 > ⚠️ 文件>150KB，read_file默认500行，写操作前确认完整读取。截断恢复：`git checkout HEAD -- SKILL.md`。
+> 外部参考：`references/presentation-design-guidelines.md`（PPT设计规范，10页竖版暗色风，含溢出修复+竖排flow+暗色统一）
+> 外部参考：`references/ppt-pdf-generation-guide.md`（PDF生成流水线，Chrome无头渲染+严格断页+常见问题修复表）
 > 外部参考：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
 > 外部参考资料：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API参数）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
 

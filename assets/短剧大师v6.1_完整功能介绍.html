@@ -14,20 +14,20 @@
 }
 * { margin:0; padding:0; box-sizing:border-box; }
 body { background:#050508; color:var(--text); font-family:'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif; display:flex; flex-direction:column; align-items:center; }
-.slide { width:var(--slide-w); min-height:var(--slide-h); background:linear-gradient(180deg,#0a0a12,#0d0d18 40%,#0a0a12); border:1px solid var(--border); border-radius:12px; margin:24px 0; padding:40px 22px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; }
+.slide { width:var(--slide-w); min-height:var(--slide-h); background:linear-gradient(180deg,#0a0a12,#0d0d18 40%,#0a0a12); border:1px solid var(--border); border-radius:12px; margin:24px 0; padding:34px 20px; position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center; }
 .slide::before { content:''; position:absolute; top:0;left:0;right:0;height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.15; }
 .cover { text-align:center; }
 .cover h1 { font-size:2.6rem; background:linear-gradient(180deg,var(--warm-gold),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900; letter-spacing:3px; }
 .cover .sub { font-size:0.9rem; color:var(--text-dim); margin-top:4px; }
 .cover .oneliner { font-size:0.94rem; color:var(--bone); margin:20px 0; line-height:1.7; }
 .cover .oneliner .en { font-size:0.68rem; color:var(--text-dim); display:block; }
-h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:4px; font-weight:800; }
-.en-sub { font-size:0.7rem; color:var(--text-dim); margin-bottom:8px; }
+h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:2px; font-weight:800; }
+.en-sub { font-size:0.7rem; color:var(--text-dim); margin-bottom:4px; }
 .stats-row { display:flex; flex-wrap:wrap; gap:5px; margin:8px 0; }
 .stat { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:11px 6px; text-align:center; flex:1; min-width:55px; }
 .stat .num { font-size:1.4rem; font-weight:900; color:var(--warm-gold); }
 .stat .label { font-size:0.58rem; color:var(--text-dim); margin-top:1px; }
-.master-detail { background:var(--card-bg); border:1px solid var(--border); border-radius:6px; padding:7px 8px; margin:2px 0; display:flex; align-items:center; gap:8px; }
+.master-detail { background:var(--card-bg); border:1px solid var(--border); border-radius:6px; padding:5px 8px; margin:1px 0; display:flex; align-items:center; gap:6px; }
 .master-detail .num { font-size:0.75rem; color:var(--gold); min-width:22px; text-align:center; }
 .master-detail .info { flex:1; min-width:0; }
 .master-detail .name { font-size:0.92rem; color:var(--warm-gold); font-weight:700; }
@@ -47,7 +47,7 @@ h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:4px; font-weight:8
 @page { bleed: 0; marks: none; }
 @media print {
   body { background: #050508 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .slide { break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; margin: 0 !important; border-radius: 0 !important; width: 390px !important; min-height: 844px !important; max-height: 844px !important; overflow: hidden !important; }
+  .slide { break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; margin: 0 !important; border-radius: 0 !important; width: 390px !important; height: 844px !important; min-height: 844px !important; max-height: 844px !important; overflow: hidden !important; }
   .slide:last-child { break-after: auto; page-break-after: auto; }
 }
 </style>
@@ -291,12 +291,18 @@ h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:4px; font-weight:8
     <tr><td>⚔️ 全军会审/Army</td><td>「十九大师会审E01-E60」</td></tr>
   </table>
 
-  <div class="flow">剧本提交 / Script Submitted
-    ├─ 19大师并行审阅 / 19 masters parallel review
-    │   每位产出: 判定 + 行号 + 修复建议 / Each: verdict + line + fix
-    ├─ 合并会审报告 / Merged Review Report
-    │   🔴阻塞/Block → 🟠重要/Important → 🟡建议/Suggest → 🟢优秀/Great
-    └─ 用户决定: 修改重审 / 直接通过 / 逐大师修改</div>
+  <div class="flow" style="line-height:1.8;">
+    <strong>📥 剧本提交 / Script Submitted</strong><br>
+    <strong>↓</strong><br>
+    <strong>🔍 19大师并行审阅</strong> / 19 masters parallel review<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">每位产出：判定 + 行号 + 修复建议 / Each: verdict + line + fix</span><br>
+    <strong>↓</strong><br>
+    <strong>📊 合并会审报告</strong> / Merged Review Report<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">🔴 阻塞/Block → 🟠 重要/Important → 🟡 建议/Suggest → 🟢 优秀/Great</span><br>
+    <strong>↓</strong><br>
+    <strong>✅ 用户决定</strong> / User decides<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">修改重审 / 直接通过 / 逐大师修改 · Revise / Pass / Fix per Master</span>
+  </div>
   <div class="highlight">
     每位大师独立输出范本：诊断头部→逐项判定→📊统计(%)→大师签字<br>
     <span class="en">Each master has independent template: diagnosis header → itemized verdict → stats(%) → signature</span>
@@ -308,26 +314,32 @@ h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:4px; font-weight:8
 <div class="slide"><div class="page-num">08</div>
   <h2>⚙️ 引擎 + 🌙 进化 / Engine + Evolution</h2>
 
-  <div class="flow"><strong>四阶段全闭环引擎 / 4-Phase Engine</strong>
-    🎬 一句话创意
-    ├─ Phase1 剧本创作：6步工作流 + 9层规则 + 875蒸馏库 + 321加密剧本
-    │   赛道定位→人物设计→第一屏→全剧规划→正文→自检 → 12项交付物
-    ├─ Phase2 剧本升级：武打L1-L3 + 暗线A/B/C/D + 5/6镜65s爆款公式
-    │   尾钩五类轮换 + 代价曲线 + 反派六档叠压 + 配角三人三弧
-    ├─ Phase3 制作交付：小云雀API四脚本 + 搬运工模式 + 逐镜20轮自检
-    │   五段式prompt公式 + 6种错误码响应 + 跨集连续提交策略
-    └─ Phase4 SQ管控：SQ0→SQ12十四道关卡
-       预检→素材→字幕→武打→逻辑→场景→一致性→参数→配乐→节奏→站位→微表情→六维→年龄→终审→后检→重生
-       一关不过，全剧不交 / One failed = entire episode blocked</div>
+  <div class="flow" style="line-height:1.8;">
+    <strong>🎬 一句话创意 / One Sentence</strong><br><strong>↓</strong><br>
+    <strong>Phase1 剧本创作</strong> / Script Creation<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">6步工作流 + 9层规则 + 875蒸馏库 + 321加密剧本 → 12项交付物</span><br><strong>↓</strong><br>
+    <strong>Phase2 剧本升级</strong> / Script Enhancement<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">武打L1-L3 + 暗线A/B/C/D + 5/6镜65s爆款公式 + 尾钩五类 + 代价曲线 + 反派六档叠压</span><br><strong>↓</strong><br>
+    <strong>Phase3 制作交付</strong> / Production & Delivery<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">小云雀API四脚本 + 搬运工模式 + 逐镜20轮自检 + 6种错误码响应</span><br><strong>↓</strong><br>
+    <strong>Phase4 SQ质量管控</strong> / Quality Control<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">SQ0→SQ12十四道关卡 · 预检→素材→字幕→武打→逻辑→场景→一致性→参数→配乐→节奏→站位→微表情→六维→年龄→终审→后检→重生</span><br>
+    <span style="font-size:0.6rem;color:var(--green);">⚠ 一关不过，全剧不交 / One failed = entire episode blocked</span>
+  </div>
 
-  <div class="flow" style="margin-top:10px;"><strong>午夜自进化 / Midnight Self-Evolution</strong>
-    🕛 每日00:00自动触发 → 19大师并行行动
-    ├─ 🌐 穷举搜索：每位大师按自己的领域搜索最新方法论
-    ├─ 📥 新发现 → 更新附录 + 融合入技能 + 版本迭代
-    ├─ 🔧 无新发现 → 优化prompt关键词的平台对接精度
-    ├─ 🔍 8类自检：版本/Phase/SQ/暗线/大师/引用/附录/品牌全量扫描
-    └─ 🔧 自愈推送：🔴致命自动修复 → git push双仓库
-    Cron: job_id=18b9119151bc · 永续 / Forever</div>
+  <div class="flow" style="margin-top:10px;line-height:1.8;">
+    <strong>🕛 每日00:00自动触发</strong> / Midnight Auto-Trigger<br><strong>↓</strong><br>
+    <strong>🌐 穷举搜索</strong> / Exhaustive Search<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">19位大师各搜各的领域，寻找最新方法论</span><br><strong>↓</strong><br>
+    <strong>📥 新发现 → 更新附录</strong> / Update Appendices<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">融合入技能 + 版本迭代</span><br>
+    <strong>🔧 无新发现 → 优化精度</strong> / Refine Precision<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">优化prompt关键词的平台对接</span><br><strong>↓</strong><br>
+    <strong>🔍 8类自检</strong> / 8 Self-Checks<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">版本/Phase/SQ/暗线/大师/引用/附录/品牌全量扫描</span><br><strong>↓</strong><br>
+    <strong>🔧 自愈推送</strong> / Auto-Fix & Push<br>
+    <span style="font-size:0.6rem;color:var(--text-dim);">🔴致命自动修复 → git push双仓库 · Cron: 永续</span>
+  </div>
 
   <div class="highlight">
     不是写完就完——是每天都在变得更自洽、更精准、更省钱。<br>

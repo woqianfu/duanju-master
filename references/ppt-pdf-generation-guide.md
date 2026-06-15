@@ -26,6 +26,7 @@
   .slide {
     break-after: page; break-inside: avoid;
     max-height: 844px !important; overflow: hidden !important;
+    height: 844px !important; /* 强制高度 — 防Chrome在边界处拆出空白页 */
     width: 390px !important;
   }
   .slide:last-child { break-after: auto; }
@@ -52,6 +53,9 @@
 | 大师卡片英文溢出 | 英文行太长 | 缩短到≤17词，用`/`替代`→` |
 | 页顶金线太抢眼 | `opacity:0.4` | 降到 `0.15` |
 | 省钱底部浮字不美观 | 无容器包裹 | 用 `.saving-box` 带边框卡片包裹 |
+| 6卡页面溢出产生空白残页 | 双行描述+大padding撑破844px | ①去英文行只留中文单行 ②padding:9px→5px, margin:4px→1px ③slide padding:40px→34px |
+| flow横排树形图出滑道 | `├─│└─` 横向字符过长 | 改竖排箭头式：每步独立`<strong>标题</strong><br><span>副文本</span>`，`↓`连接 |
+| flow边框太亮不融暗色 | `#1a1a28`在暗底上显突兀 | 改为`rgba(26,26,40,0.5)`半透明融入背景 |
 
 ## 版本同步规则
 

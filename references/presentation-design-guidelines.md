@@ -80,6 +80,9 @@ P10 版本历程+结尾
 | 页顶金色横线突兀 | opacity:0.4 | 降为0.15，几乎融入暗色背景 |
 | 字体缩放不同步 | 手动改个别元素 | 用Python脚本全局等比缩放（h2/master/skill/table/highlight同步↑） |
 | 分页内容过密 | 8个大师挤一页 | ⑫-⑰一页 + ⑱-⑲另一页（用省钱干货表填满空余） |
+| P4+P5溢出空白残页 | 6卡×双行描述撑破844px | ①去英文行留中文单行 ②padding 9px→5px, margin 4px→1px ③slide padding 40px→34px ④print强制`height:844px!important` |
+| flow横排ASCII太宽出滑道 | 树状图`├─│└─`横向过长 | 改为竖排箭头式：`📥 → 🔍 → 📊 → ✅`，每一步用`<strong>`标题+`<span>`副文本 |
+| flow边框与暗色不搭 | `border:1px solid #1a1a28`偏亮 | 改为`rgba(26,26,40,0.5)`透明边框融入背景 |
 
 ## 字体比例铁律
 
