@@ -64,4 +64,17 @@ P9  15大附录
 P10 版本历程+结尾
 ```
 
+## 已验证CSS规则（v6.1实战打磨）
+
+| 问题 | 根因 | 修复 |
+|------|------|------|
+| 大师英文描述撑出卡片 | flex子元素无宽度约束 | `.master-detail .info { flex:1; min-width:0; }` |
+| 矩阵大师溢出 | 英文行44词过长 | 缩至17词，`→`换`/`，省略冗余词 |
+| 省钱底部文字浮空 | 无容器框 | 用 `.saving-box`（绿边框卡片）替代裸文字 |
+| 页脚不在页面最底部 | `bottom:12px` 偏高 | 改 `bottom:6px` 贴底 |
+| @page尺寸Chrome不认 | HTML缺print媒体查询 | 嵌入: `@page{size:390px 844px;margin:0} @media print{...}` |
+| 字体手机太小 | 旧最小字号 0.5rem | 全局抬至 ≥0.64rem（skill 0.66rem, table 0.64rem） |
+| CSS重复定义 | patch叠加产生 | Python去重脚本：按行检测 `.flow{` 重复→skip |
+| 分页后页码残留 | sed `s/镜5→镜6/g` 误触 | Python精确替换 `<!-- PX: -->` + `page-num` 逐页修正 |
+
 ── 短剧大师™ · 微短剧全流程一体化创作技能 · DCI:RDCS00ANT.202606159652337429 ──
