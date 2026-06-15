@@ -172,6 +172,7 @@ metadata:
 > 外部参考：`references/ppt-pdf-generation-guide.md`（PDF生成流水线，Chrome无头渲染+严格断页+常见问题修复表）
 > 外部参考：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
 > 外部参考资料：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API参数）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
+> 📁 PPT/PDF生成实战指南：`references/ppt-pdf-generation-guide.md`（竖版暗色风·字号体系·Chrome无头渲染·防断页·常见陷阱）
 
 
 ```

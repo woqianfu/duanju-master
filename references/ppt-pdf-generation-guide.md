@@ -1,111 +1,109 @@
-# PPT/PDF 生成避坑指南 / PPT-PDF Generation Pitfalls Guide
+# PPT/PDF 生成实战指南 — 竖版暗色风 · 中英双语 / Vertical Dark Bilingual PDF Guide
 
-> v6.1 二十轮迭代积累的全部教训。改 PPT 前必读，每一项都是踩过的坑。
+> 基于 v6.1 十轮迭代打磨出的稳定方案。每个参数都是踩坑踩出来的。
 
-## 1. CSS 规则丢失 — 最隐蔽的 bug
+## 文件架构 / File Architecture
 
-**症状**：样式不生效（如页脚变成浏览器默认大小、卡片无背景）
-
-**原因**：Python `sed`/字符串替换 HTML 时可能意外删除或覆盖 CSS 块。特别是 `replace()` 操作大型文本块时。
-
-**检查**：每次改完 HTML 后执行 `grep '\.footer-bar' file.html | head -3` 确认关键规则存在。
-
-**必保规则清单**：`.footer-bar` `.slide` `.master-detail` `.flow` `.highlight` `.table` `.stat` `.saving-box`
-
-## 2. 页面溢出 → 空白残页
-
-**修复优先级（从轻到重，逐步试）**：
-1. 去英文 skill-en 行（最有效，省 ~30% 高度）
-2. 缩中文到 40 字以内
-3. 减卡片 padding: `9px 10px` → `5px 8px`
-4. 减卡片 margin: `4px` → `1px`
-5. 减 slide padding: `42px 24px` → `34px 20px`
-6. print CSS 三锁：`height:844px !important; max-height:844px !important; overflow:hidden !important`
-7. `break-inside:avoid; page-break-inside:avoid` + `break-after:page` 双重锁
-
-## 3. 所有流程竖向，禁止横向 ASCII 树
-
-**禁止**：`├─` `└─` `│` ASCII 树形 → 会产生横向滚动条
-
-**正确**：每个步骤独立一行，每项占两行（标题一行 + 灰色描述一行），不横向拥挤。
-
-## 4. 字体层级（最终版本 v6.1）
-
-| 元素 | 大小 | 颜色 | 备注 |
-|------|:--:|------|------|
-| 封面标题 h1 | 2.8rem | gold 渐变 | |
-| 页面标题 h2 | 1.45rem | `var(--warm-gold)` | |
-| 大师名 .name | 0.92rem | `var(--warm-gold)` | |
-| 技能描述 .skill | 0.7rem | `var(--text)` | 紧凑页可缩至 0.64rem |
-| 表格 .table | 0.68rem | `var(--text)` | |
-| 页脚 .footer-bar | **0.45rem** | `rgba(255,255,255,0.13)` | 可见但不抢眼。太大会喧宾夺主，太小(0.24rem)看不见 |
-| 卡片数字 .num | 1.5rem | `var(--warm-gold)` | 数据页；大师页用小号 |
-
-## 5. 暗色统一
-
-| 元素 | 颜色/值 |
-|------|------|
-| 页面背景 | `#050508` |
-| 卡片背景 | `#111118` |
-| 边框 | `#1a1a28` |
-| flow 框边框 | `rgba(26,26,40,0.5)` |
-| 顶部装饰线 | gold 渐变 `opacity:0.15` |
-| 页脚文本 | `rgba(255,255,255,0.13)` |
-| 禁止 | 白色元素、白框、高亮白色文字 |
-
-## 6. 数据页面排版（P2）
-
-数据卡片要大、要散开、要填满页面，不要缩在中间：
-- padding: `14px 6px`
-- 数字 `1.5rem`（太大 1.8rem 撑出格→缩小）
-- 行间距 gap: `8px`，行间 margin: `12px`
-- 数字如 `60→15%` 太宽 → 改为 `15%` + 标签 `废片率↓(原60%)`
-
-## 7. 封面页设计（P1）
-
-- 标题 2.8rem 金色渐变
-- 核心句独占一行居中
-- 三个关键词分色横排：金`十九大师军团` · 紫`精密工程化` · 青`自我进化`
-- 下面四条横向亮点条（金/紫/青/绿），各带独立边框
-
-## 8. 终页设计（P10）
-
-- 版本历程用卡片流（stat 排成两行），v6.1 金色高亮
-- 双排八项指标
-- 结束语中英双语，金色边框卡片框
-
-## 9. 紧凑卡片页（P4/P5 六卡以上）
-
-- 去掉 skill-en 英文行
-- 描述用点号 `·` 替代句号，一行写完
-- padding: `5px 8px`，margin: `1px 0`，gap: `6px`
-- slide padding 缩至 `34px 20px`
-
-## 10. 生成命令
-
-```bash
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --no-sandbox \
-  --print-to-pdf="输出.pdf" --no-pdf-header-footer "file://HTML路径"
+```
+assets/短剧大师v6.1_完整功能介绍.html  ← 单文件，自主展示
+assets/短剧大师v6.1_完整功能介绍.pdf   ← Chrome无头渲染输出
+Desktop/短剧大师v6.1_完整功能介绍.pdf   ← 用户交付副本
 ```
 
-必须嵌入的 CSS：
+## HTML 基础设置 / HTML Foundation
+
+### 尺寸 / Dimensions
 ```css
-@page { size: 390px 844px; margin: 0; }
+:root { --slide-w: 390px; --slide-h: 844px; }  /* iPhone 14 竖屏比例 */
+.slide { width:390px; min-height:844px; padding:34px 20px; overflow:hidden; }
+```
+
+### 配色 / Colors
+```css
+--gold: #D4A843; --warm-gold: #F0C060;      /* 标题/亮点 */
+--bone: #E8DDD0;                              /* 核心正文 */
+--text: #ccc; --text-dim: #888;               /* 次级文字 */
+--card-bg: #111118; --border: #1a1a28;        /* 卡片 */
+--purple: #8B5CF6; --cyan: #06B6D4; --green: #22C55E;
+body { background: #050508; }
+.slide { background: linear-gradient(180deg,#0a0a12,#0d0d18 40%,#0a0a12); }
+```
+
+## 字号体系 — 经过十轮验证 / Font Sizes — Battle-Tested
+
+| 元素 | rem | 说明 |
+|------|:--:|------|
+| 封面标题 h1 | 2.6 | 手机不遮挡 |
+| 页面标题 h2 | 1.45 | 各页统一 |
+| 副标题 .en-sub | 0.7 | 英文辅助 |
+| 大师名字 .name | 0.92 | 卡片内醒目 |
+| 技能描述 .skill | 0.7 | 正文可读 |
+| 数据数字 .stat .num | 1.5 | 不撑出格 |
+| 数据标签 .stat .label | 0.62 | 紧凑 |
+| 流程框 .flow | 0.64 | 等宽字体 |
+| 表格 .table | 0.68 | 清晰 |
+| 高亮 .highlight | 0.82 | 重点 |
+| 页脚 .footer-bar | 0.45 | 不喧宾夺主 |
+| 页脚颜色 | rgba(255,255,255,0.13) | 隐约可见 |
+
+## PDF 生成 / PDF Generation
+
+### Chrome 命令
+```bash
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-sandbox \
+  --print-to-pdf="输出路径.pdf" --no-pdf-header-footer \
+  "file:///绝对路径.html"
+```
+
+### 防断页 CSS（关键）
+```css
+@page { size: 390px 844px; margin: 0; bleed: 0; marks: none; }
 @media print {
   body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .slide { break-after: page; break-inside: avoid; height: 844px !important; overflow: hidden !important; }
+  .slide {
+    break-after: page; page-break-after: always;
+    break-inside: avoid; page-break-inside: avoid;
+    width: 390px !important; height: 844px !important;
+    min-height: 844px !important; max-height: 844px !important;
+    overflow: hidden !important;
+    margin: 0 !important; border-radius: 0 !important;
+  }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
 }
 ```
 
-## 11. 生成后检查清单
+## 常见问题 / Common Pitfalls
 
-- [ ] 页数 = slide 数（无空白残页）
-- [ ] 所有 footer 存在（`grep -c 'footer-bar' file.html`）
-- [ ] P4、P5 无溢出残页（6 张卡片最容易超）
-- [ ] P7 会审、P8 引擎无溢出
-- [ ] 无横向滚动条（ASCII 树已改竖向）
-- [ ] 数据卡片未撑出格（数字 ≤ 1.5rem）
-- [ ] 页脚小且淡但不消失（0.45rem + 0.13 opacity）
-- [ ] 无白色或明亮元素破坏暗色主题
-- [ ] @page 尺寸 390×844 已嵌入 HTML
-- [ ] CSS 规则完整（`.footer-bar` 等关键规则未被误删）
+### 🐛 空白残页（第二页只有一个页脚）
+**原因**：内容超出 844px → Chrome 自动分页。
+**修复**：缩减该页内容（去英文行/缩短描述/减小内边距/减小字号）。
+
+### 🐛 页脚过大
+**原因**：`.footer-bar` CSS 规则丢失（被之前的编辑误删）。
+**修复**：检查 CSS 中 `.footer-bar` 是否存在后再生 PDF。
+
+### 🐛 横向滚动条
+**原因**：ASCII 树形文字太宽（`├─...─...─` 超出 390px）。
+**修复**：改为竖向布局，每项 `<br>` 换行，不用 ASCII 树。
+
+### 🐛 标题被遮挡（手机上）
+**原因**：h1 过大 + padding 挤压。
+**修复**：h1 ≤ 2.6rem，减小幻灯片 padding-top。
+
+### 🐛 数据卡片数字撑出格
+**原因**：`1.8rem` 时 "3,400+" 或 "60→15%" 太宽。
+**修复**：数字 ≤ 1.5rem，长文本拆分到标签行。
+
+### 🐛 装饰线不协调
+**不要用** `.slide::before` 的金色渐变线。暗色背景不需要这个。
+
+## 设计原则 / Design Principles
+
+1. **竖向优先**：所有流程/列表用 `<br>` 竖排，不用横向 ASCII 树
+2. **先紧后松**：内容宁少勿多，撑满页面从精简开始
+3. **页脚克制**：0.45rem + 透明度 0.13，不强眼
+4. **中英双语但中文为主**：英文做辅助色（text-dim），中文做正文色
+5. **封面重数据**：四个 stat 卡片 + 两排 pill 标签，不堆长句
+6. **每次只改一处**：改完→生 PDF→验证，不要一次改多处导致定位困难
+7. **git commit 双语**：`中文描述 / English description` 格式
