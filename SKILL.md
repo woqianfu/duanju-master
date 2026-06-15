@@ -1,6 +1,6 @@
 ---
 name: 短剧大师
-description: 微短剧全流程一体化创作技能·国家版权局DCI认证 RDCS00ANT.202606159652337429·从一句话创意到小云雀成片·覆盖剧本创作/剧本升级/制作交付/SQ质量管控四阶段·十八大师创作军团·午夜自进化·@短剧大师 触发·v6.1
+description: 微短剧全流程一体化创作技能·国家版权局DCI认证 RDCS00ANT.202606159652337429·从一句话创意到小云雀成片·覆盖剧本创作/剧本升级/制作交付/SQ质量管控四阶段·十九大师创作军团(含省钱大师720P→1080P)·午夜自进化·全量双语交付·@短剧大师 触发·v6.1
 user-invocable: true
 # 软著申请材料在 references/soft-copyright-application-guide.md
 # 版本演进日志在 references/changelog.md
