@@ -1,68 +1,71 @@
-# 短剧大师™ PPT/PDF 生成指南
+# PPT/PDF 生成规范 / PPT & PDF Generation Guide
 
-> 竖版暗色影视风 · 手机比例 · 中英双语 · Chrome无头渲染
+> 短剧大师™ v6.1 配套演示文稿生成标准。每次更新 PPT 时严格遵守。
 
-## 参数标准
+## 画布参数 / Canvas
 
 | 参数 | 值 |
 |------|------|
-| 尺寸 | **390×844px** (iPhone 14 比例) |
-| 边距 | `padding: 40px 22px` |
-| 配色 | 暗底 `#0a0a0f→#0d0d18` + 金色 `#D4A843` + 白色半透文字 |
-| 字体 | PingFang SC / Noto Sans SC |
-| 封面标题 | 2.4rem 金色渐变 background-clip |
-| 大师卡片 | `font-size: 0.88rem` 标题, `0.7rem` 技能描述 |
-| 页脚 | `0.32rem` rgba(255,255,255,0.12) 极淡 |
-| 页顶金线 | `opacity: 0.15` 几乎融入背景 |
+| 尺寸 | 390 × 844 px（iPhone 14 竖屏比例） |
+| 背景 | 暗色影视风 `linear-gradient(180deg, #0a0a12, #0d0d18 40%, #0a0a12)` |
+| 字体 | PingFang SC / Noto Sans SC / Microsoft YaHei |
+| 主色 | `#D4A843`（暖金）/ `#F0C060`（亮金） |
 
-## CSS 关键规则
+## 防溢出铁律 / Anti-Overflow Rules
 
-```css
-/* 打印尺寸锁定 */
-@page { size: 390px 844px; margin: 0; }
+| 规则 | 说明 |
+|------|------|
+| **一页不超过 7 张卡片** | 6 张紧凑卡 + header + footer = ~780px，安全 |
+| **卡片拥挤时去英文行** | 优先保留中文，去掉 `skill-en` 节省 ~20px/卡 |
+| **竖排替代横排** | ASCII 树形横排 → `↓` 箭头竖排，杜绝横向滚动条 |
+| **单框替代双框** | 两个竖排 flow 合并为一个紧凑框 |
+| **Print 锁定高度** | `height: 844px !important; max-height: 844px; overflow: hidden` |
+| **Slide padding** | `34px 20px`（拥挤页可降到 `30px 18px`） |
+| **卡片 padding** | `5px 8px`，margin `1px 0` |
 
-/* 严格断页 — 杜绝空白残页 */
-@media print {
-  .slide {
-    break-after: page; break-inside: avoid;
-    max-height: 844px !important; overflow: hidden !important;
-    height: 844px !important; /* 强制高度 — 防Chrome在边界处拆出空白页 */
-    width: 390px !important;
-  }
-  .slide:last-child { break-after: auto; }
-  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-}
-```
+## 页脚规范 / Footer Rules
 
-## Chrome 无头渲染命令
+| 规则 | 值 |
+|------|------|
+| 字号 | `0.32rem` — 极细，不喧宾夺主 |
+| 颜色 | `rgba(255,255,255,0.12)` — 几乎融入背景 |
+| 位置 | `position: absolute; bottom: 6px` — 页面最底部 |
+
+## 暗色一致性 / Dark Theme Consistency
+
+| 禁止 | 替代方案 |
+|------|------|
+| ❌ 白色边框 `.flow` | ✅ `border: 1px solid rgba(26,26,40,0.5)` |
+| ❌ 亮色 emoji | ✅ 可接受，但不要大面积使用 |
+| ❌ 页顶金色横线太亮 | ✅ `opacity: 0.15`（原来 0.4） |
+| ❌ 版权独立页 | ✅ DCI 编号融入 badge 栏，不独立设页 |
+
+## 内容重点原则 / Content Focus
+
+| 优先级 | 内容 |
+|:--:|------|
+| 1 | **十九大师逐位展示**（每位中英双行精准技能） |
+| 2 | 会审系统 + 四阶段引擎 + 午夜进化 |
+| 3 | 省钱大师融为第 19 位，不独立设页 |
+| 4 | 版权信息低调处理（封面一行、末尾 badge） |
+
+## PDF 导出命令 / Export Command
 
 ```bash
 "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
   --headless --disable-gpu --no-sandbox \
-  --print-to-pdf="输出路径.pdf" \
+  --print-to-pdf="/Users/yan/Desktop/短剧大师vX.X_完整功能介绍.pdf" \
   --no-pdf-header-footer \
-  "file://HTML文件路径"
+  "file:///Users/yan/.hermes/skills/短剧大师/assets/短剧大师vX.X_完整功能介绍.html"
 ```
 
-## 常见问题
+## HTML 必备 CSS / Required CSS
 
-| 问题 | 原因 | 修复 |
-|------|------|------|
-| 页内容被截断出现空白残页 | Chrome按内容高度自动分页 | 加 `break-inside:avoid` + `max-height:844px` + `overflow:hidden` |
-| 页脚离底部太远 | `bottom:12px` 过高 | 降到 `bottom:6px` |
-| 大师卡片英文溢出 | 英文行太长 | 缩短到≤17词，用`/`替代`→` |
-| 页顶金线太抢眼 | `opacity:0.4` | 降到 `0.15` |
-| 省钱底部浮字不美观 | 无容器包裹 | 用 `.saving-box` 带边框卡片包裹 |
-| 6卡页面溢出产生空白残页 | 双行描述+大padding撑破844px | ①去英文行只留中文单行 ②padding:9px→5px, margin:4px→1px ③slide padding:40px→34px |
-| flow横排树形图出滑道 | `├─│└─` 横向字符过长 | 改竖排箭头式：每步独立`<strong>标题</strong><br><span>副文本</span>`，`↓`连接 |
-| flow边框太亮不融暗色 | `#1a1a28`在暗底上显突兀 | 改为`rgba(26,26,40,0.5)`半透明融入背景 |
-
-## 版本同步规则
-
-- README.md 版本badge必须与SKILL.md一致
-- HTML文件名含版本号: `短剧大师vX.X_完整功能介绍.html`
-- PDF文件名同步: `短剧大师vX.X_完整功能介绍.pdf`
-- 每次PPT修改后同步更新 `assets/` 下HTML和PDF
-- GitHub commit 必须中英双语格式
-
-> 更新日期: 2026-06-15 · v6.1 实战验证
+```css
+@page { size: 390px 844px; margin: 0; }
+@media print {
+  body { background: #050508 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .slide { break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; margin: 0 !important; border-radius: 0 !important; width: 390px !important; height: 844px !important; min-height: 844px !important; max-height: 844px !important; overflow: hidden !important; }
+  .slide:last-child { break-after: auto; page-break-after: auto; }
+}
+```

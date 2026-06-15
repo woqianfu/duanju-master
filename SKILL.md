@@ -375,6 +375,7 @@ metadata:
 | `references/masters-output-templates.md` | 19大师独立输出范本（31KB，每位含暗纹+统计+签名） |
 | `references/masters-self-evolution.md` | 19大师自进化矩阵（搜索方向+穷举关键词+优化策略） |
 | `references/savings-master.md` | 省钱大师完整定义（5大省钱维度+省钱计算器+会审模板） |
+| `references/ppt-pdf-generation-guide.md` | PPT/PDF生成规范（防溢出+页脚+暗色+导出命令） |
 | `references/review-methodology.md` | 审查方法论（SQ0-SQ12批量审查+第三方剧本评估+跨体裁适配） |
 | `references/platform-pitfall-broken-syntax.md` | 平台句式陷阱（破折号断裂检测+修复策略） |
 | `references/version-unification-guide.md` | 版本统一指南（跨集版本一致性方法论） |
@@ -2057,7 +2058,9 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `短剧大师v6.1_完整功能介绍.pdf` | 完整功能介绍（HTML竖屏演示文稿，11页中英双语暗色影视风） |
+| `short-drama-master-v6.1-showcase.html` | 完整功能介绍（HTML竖屏演示文稿，10页中英双语暗色影视风） |
+| `short-drama-master-v6.1-showcase.pdf` | 竖版PDF出版稿（Chrome无头渲染，1.5MB） |
+| `references/ppt-pdf-generation-guide.md` | PPT/PDF生成规范（画布/防溢出/页脚/暗色/导出命令） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/changelog.md` | 版本演进日志（v5.2 DCI认证后全记录） |
 | `references/github-sync.md` | GitHub双仓库SSH同步+Git恢复指南 |
