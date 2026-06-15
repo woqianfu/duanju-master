@@ -1836,7 +1836,7 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `短剧大师_v5.0_Presentation.pptx（v5.0旧版演示文稿）` | 20页演示文稿（暗色电影主题） |
+| `短剧大师v5.5_完整功能介绍.pdf` | 完整功能介绍（PDF，1.4MB） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/github-sync.md` | GitHub双仓库SSH同步+Git恢复指南 |
 | `references/review-methodology.md` | 全剧批量审查方法论（SQ0-SQ12+8陷阱清单+三路并行策略） |
