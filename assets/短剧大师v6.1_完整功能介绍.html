@@ -101,7 +101,7 @@ h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:2px; font-weight:8
     <div class="stat"><div class="num">875</div><div class="label">蒸馏案例</div></div>
     <div class="stat"><div class="num">20</div><div class="label">运镜百科</div></div>
     <div class="stat"><div class="num">6</div><div class="label">维面部精控</div></div>
-    <div class="stat"><div class="num">60→15%</div><div class="label">废片率</div></div>
+    <div class="stat"><div class="num">15%</div><div class="label">废片率↓(原60%)</div></div>
   </div>
   <div class="highlight">
     召唤即出诊 · 每位大师独立输出诊断报告 · 单大师/三师联诊/全军会审<br>
@@ -289,20 +289,25 @@ h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:2px; font-weight:8
   <h2>🏛️ 十九大师会审</h2>
 
   <table class="table">
-    <tr><th style="width:25%;">模式</th><th>示例</th></tr>
-    <tr><td>🩺 单大师</td><td>「暗线大师，查E01-E10」</td></tr>
-    <tr><td>🤝 三师联诊</td><td>「武术+运镜+废片，审E35」</td></tr>
+    <tr><th style="width:22%;">模式</th><th>调用示例</th></tr>
+    <tr><td>🩺 单大师</td><td>「暗线大师，查E01-E10代价曲线」</td></tr>
+    <tr><td>🤝 三师联诊</td><td>「武术+运镜+废片，审E35战斗段」</td></tr>
     <tr><td>⚔️ 全军会审</td><td>「十九大师会审E01-E60」</td></tr>
   </table>
 
   <div class="flow">
-    剧本提交 → 19大师并行审阅 → 合并会审报告<br>
+    <strong>会审流程</strong><br>
+    1. 剧本提交<br>
+    2. 19大师各自读各自关注的维度，并行审阅<br>
+    3. 每位大师产出：判定 + 具体行号 + 修复建议<br>
+    4. 合并为会审报告，按严重度排序<br>
     🔴阻塞 → 🟠重要 → 🟡建议 → 🟢优秀<br>
-    用户裁定：修改重审 / 直接通过 / 逐大师修改
+    5. 用户裁定：修改后重审 / 直接通过 / 逐大师修改
   </div>
 
   <div class="highlight">
-    每位大师独立范本：诊断→判定→统计(%)→签字
+    <strong>每位大师独立范本输出</strong>：诊断头部 → 逐项判定 → 📊统计(通过率%) → 大师签字<br>
+    单大师出诊 / 三师联诊 / 全军会审 — 三种模式自由组合
   </div>
 
   <div class="footer-bar">── 短剧大师™ · Short Drama Master ──</div>
@@ -313,19 +318,22 @@ h2 { font-size:1.45rem; color:var(--warm-gold); margin-bottom:2px; font-weight:8
   <h2>⚙️ 引擎 + 🌙 进化</h2>
 
   <div class="flow">
-    <strong>四阶段引擎</strong><br>
-    P1 剧本 · 6步+9层+875蒸馏+321剧本<br>
-    P2 升级 · 武打+暗线+65s公式+尾钩五类<br>
-    P3 交付 · API四脚本+搬运工+20轮自检<br>
-    P4 管控 · SQ0-12十四关·一关不过全剧不交
+    <strong>🎬 四阶段全闭环引擎</strong><br>
+    <strong>P1 剧本创作</strong> · 6步工作流+9层规则+875蒸馏库+321加密剧本库 → 12项标准交付物<br>
+    <strong>P2 剧本升级</strong> · 武打L1-L3+暗线A/B/C/D四线追踪+5/6镜65s爆款公式+尾钩五类轮换<br>
+    <strong>P3 制作交付</strong> · 小云雀API四脚本+搬运工模式+逐镜20轮自检+6种错误码响应<br>
+    <strong>P4 质量管控</strong> · SQ0→SQ12十四道关卡 · 跨集版本扫描 · 一关不过全剧不交<br>
+    <span style="font-size:0.62rem;color:var(--text-dim);">Phase 1→2→3→4 顺序执行，跳关禁止。四层全闭环，从一句话到成片。</span>
   </div>
 
   <div class="flow" style="margin-top:8px;">
-    <strong>午夜自进化</strong><br>
-    每日00:00 自动触发<br>
-    19大师并行搜索各自领域<br>
-    新发现→更新附录 / 无发现→优化精度<br>
-    8类自检→自愈→git push
+    <strong>🌙 午夜自进化系统</strong><br>
+    <strong>触发</strong> · 每日00:00自动启动，19位大师并行行动<br>
+    <strong>搜索</strong> · 每位大师穷举搜索自己领域的最新方法论（4路全网搜索）<br>
+    <strong>吸收</strong> · 新发现→更新对应附录/章节；无新发现→优化prompt平台对接精度<br>
+    <strong>自检</strong> · 8类交叉引用扫描：版本/Phase/SQ/暗线/大师/引用/附录/品牌<br>
+    <strong>自愈</strong> · 🔴致命问题自动修复 → git push双仓库 · Cron永续<br>
+    <span style="font-size:0.62rem;color:var(--text-dim);">一个会自我进化的技能。不是写完就完——是每天都在变得更自洽。</span>
   </div>
 
   <div class="highlight">
