@@ -12,7 +12,7 @@
   <img src="https://img.shields.io/badge/剧本库-321部加密+875条蒸馏-333?style=for-the-badge" alt="Scripts">
   <img src="https://img.shields.io/badge/双平台-小云雀+Seedance2.0-orange?style=for-the-badge" alt="Platforms">
   <img src="https://img.shields.io/badge/自进化-每日00:00-green?style=for-the-badge" alt="Self-Evolving">
-  <img src="https://img.shields.io/badge/DCI-数字版权认证-0066CC?style=for-the-badge" alt="DCI">
+  <img src="https://img.shields.io/badge/DCI-RDCS00ANT.202606159652337429-0066CC?style=for-the-badge" alt="DCI">
 </p>
 
 ---
@@ -121,20 +121,6 @@
 
 ---
 
-## 🛡️ 国家版权局 DCI 数字版权认证
-
-| 项目 | 内容 |
-|------|------|
-| **DCI 编号** | `RDCS00ANT.202606159652337429` |
-| **作品名称** | 短剧大师微短剧创作系统规则引擎 |
-| **著作权人** | 北京创业科创科技中心 |
-| **作品类别** | 文字作品 |
-| **认证标准** | CY/T126-2015「数字版权唯一标识符」 |
-| **创作完成日期** | 2026年06月15日 |
-| **DCI 申领时间** | 2026年06月15日 17:48:36 |
-| **证书文件** | `assets/DCI-数字版权证书.pdf`（7.4MB） |
-
-> 本作品已通过国家版权局数字版权链（DCI）认证。任何未经授权的复制、分发、修改、嵌入AI训练数据集均构成侵权。
 
 ---
 
