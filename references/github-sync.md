@@ -28,4 +28,4 @@ git checkout HEAD -- SKILL.md           # Restore
 ## PptxGenJS PPT Creation
 Install: `npm install -g pptxgenjs`
 Run with: `NODE_PATH=$(npm root -g) node script.js`
-Output: `assets/短剧大师v6.0_完整功能介绍.pdf`
+Output: `assets/短剧大师v6.1_完整功能介绍.pdf`

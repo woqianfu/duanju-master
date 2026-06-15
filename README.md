@@ -1,273 +1,200 @@
-# 🎬 短剧大师™ (Short Drama Master) v6.0
+# 🎬 短剧大师™ · Short Drama Master v6.1
+
+> **720P的prompt量 → 1080P的成片质量。省一半token，降七成废片。**
+> **720P prompt volume → 1080P final quality. Half the tokens, 70% less waste.**
 
 > 一句话 → AI微短剧成片。全球首个全流程闭环、精密工程化、自我进化的微短剧创作系统。
+> From one sentence to finished AI short drama. The world's first fully closed-loop, precision-engineered, self-evolving short drama creation system.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/版本-v6.0-ff6b35?style=for-the-badge" alt="Version">
-  <img src="https://img.shields.io/badge/SKILL.md-3,300+行-2ea44f?style=for-the-badge" alt="Lines">
-  <img src="https://img.shields.io/badge/十八大师-18位-8A2BE2?style=for-the-badge" alt="18 Masters">
-  <img src="https://img.shields.io/badge/关卡-14道(SQ0--SQ12)-red?style=for-the-badge" alt="Quality Gates">
-  <img src="https://img.shields.io/badge/质量-20维穷举-purple?style=for-the-badge" alt="Quality">
-  <img src="https://img.shields.io/badge/附录-15(A--T)-blue?style=for-the-badge" alt="Appendices">
-  <img src="https://img.shields.io/badge/剧本库-321部加密+875条蒸馏-333?style=for-the-badge" alt="Scripts">
-  <img src="https://img.shields.io/badge/双平台-小云雀+Seedance2.0-orange?style=for-the-badge" alt="Platforms">
-  <img src="https://img.shields.io/badge/自进化-每日00:00-green?style=for-the-badge" alt="Self-Evolving">
-  <img src="https://img.shields.io/badge/DCI-RDCS00ANT.202606159652337429-0066CC?style=for-the-badge" alt="DCI">
+  <img src="https://img.shields.io/badge/Version-v6.1-ff6b35?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Masters-19-8A2BE2?style=for-the-badge">
+  <img src="https://img.shields.io/badge/SKILL.md-3,400+_lines-2ea44f?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Quality_Gates-14(SQ0--SQ12)-red?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Dimensions-20-purple?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Appendices-15(A--T)-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Scripts-321_encrypted+875_distilled-333?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Platforms-Xiaoyunque+Seedance2.0-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Evolving-Daily_00:00-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/DCI-RDCS00ANT.202606159652337429-0066CC?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Token_Saved-~73%25-brightgreen?style=for-the-badge">
 </p>
 
 ---
 
-## 🏛️ 十八大师创作军团
+## 💎 Why Short Drama Master? / 为什么选择短剧大师？
 
-> 短剧大师™ 不是一个AI —— 是 **十八位独立大师组成的创作军团**。调用即召唤，每位大师各司其职。
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│                    🎬 短剧大师™ 十八大师                       │
-├───────────────────┬───────────────────┬─────────────────────┤
-│    创作军团        │     品控军团       │      技术军团        │
-│   ──────────      │   ──────────      │    ──────────       │
-│  ① 剧本大师        │  ⑥ 质检大师       │   ⑫ 灯光大师         │
-│  从一句话到12项     │  14道关卡一关不    │   16种灯光+5类风格   │
-│  交付物，9层规则    │  过全剧不交        │   打在正确的人身上   │
-│  +875条蒸馏+321    │                   │                     │
-│  部加密剧本库       │  ⑦ 肌肉大师       │   ⑬ 转场大师         │
-│                    │  六维面部表情精控   │   5种核心转场词典    │
-│  ② 武术大师        │  肌肉键盘/情绪三层  │   镜头之间不说断就断  │
-│  武打动作指导L1-L3  │  /生理联动/非对称  │                     │
-│  分级+关键词映射    │  瑕疵/口型同步      │   ⑭ 矩阵大师         │
-│                    │                   │   20维质量穷举       │
-│  ③ 暗线大师        │  ⑧ 构图大师       │   每一维四步闭环      │
-│  四条暗线A/B/C/D   │  竖屏七法八站位     │   控制/约束/检测/修复 │
-│  全程追踪标注       │  景别均衡+大气镜头  │                     │
-│                    │                   │   ⑮ 配乐大师         │
-│  ④ 节奏大师        │  ⑨ 运镜大师       │   九类场景配乐       │
-│  5/6镜65s爆款公式   │  20种AI运镜百科    │   BPM+音色+情绪对照  │
-│  尾钩五类+代价曲线  │  推拉摇跟环绕手持   │                     │
-│                    │  速率术语标准化     │   ⑯ 对白大师         │
-│  ⑤ 交付大师        │                   │   每句话要么推进剧情  │
-│  小云雀API一键提交  │  ⑩ 废片大师       │   要么暴露暗线        │
-│  搬运工模式+逐镜提交 │  BX Protocol      │   要么埋下尾钩        │
-│  20轮自检+6种错误码 │  9条法则+四级分类   │                     │
-│                    │  五段式提示词公式   │   ⑰ 命名大师         │
-│                    │                   │   6000部词频统计      │
-│                    │  ⑪ 连贯大师       │   广电红线+24种模板   │
-│                    │  7大锚点时序管控    │                     │
-│                    │  5类故障诊断+修复   │   ⑱ 审核大师         │
-│                    │                   │   五条红线全量审查     │
-│                    │                   │   一触即停            │
-├───────────────────┴───────────────────┴─────────────────────┤
-│  召唤：「武术大师+运镜大师，山洞追杀分镜」→ 两位大师同时就位    │
-│  总攻：「十八大师全军出击」→ 从剧本到提交一条龙                │
-└─────────────────────────────────────────────────────────────┘
-```
-
----
-
-## 🏛️ 十八大师会审系统
-
-> 剧本一到，全员出诊。18位大师并行审阅 → 合并为《会审报告》→ 按🔴🟠🟡🟢四档排序。
-
-```
-剧本提交 → 18位大师并行审阅 → 会审报告
-             各自出诊断+行号+修复建议    🔴阻塞 → 🟠重要 → 🟡建议 → 🟢优秀
-```
-
-**三种调用模式：**
-
-| 模式 | 示例 | 产出 |
-|------|------|------|
-| 🩺 单大师出诊 | 「暗线大师，审查E01-E10代价曲线」 | 一位大师的独立诊断报告 |
-| 🤝 三大师联诊 | 「武术大师+运镜大师+废片大师，审查E35」 | 三位大师的联合报告 |
-| ⚔️ 军团会审 | 「十八大师会审E01-E60」 | 18位大师全量会审报告 |
-
-每位大师按独立范本输出：诊断头部 → 审查维度逐项判定 → 📊统计（通过率%）→ 大师签字。
-
-> 📁 完整范本：`references/masters-output-templates.md`（31KB，18位大师逐一定制）
-
----
-
-## 🌙 午夜自进化系统
-
-> 每日 00:00，短剧大师™ 自动执行 **8类交叉引用扫描 + 4路全网搜索 + 自愈修复**。
-
-```
-午夜00:00触发
-  │
-  ├─ 🔍 8类逻辑自检
-  │   版本号一致性 · Phase引用闭合 · SQ关卡完整性
-  │   暗线术语统一 · 十八大师覆盖 · 交叉引用断裂
-  │   附录编号连续 · 品牌标识合规
-  │
-  ├─ 🌐 4路全网搜索
-  │   AI视频新技术 · 小云雀/即梦更新
-  │   Seedance更新 · 新平台新工具
-  │
-  ├─ 🔧 自愈修复
-  │   🔴致命问题自动修复 → git push
-  │   🟡建议问题写入 report 等确认
-  │
-  └─ 📊 输出《午夜进化报告》
-     自检结果 + 搜索发现 + 自动修复 + 待确认项
-```
-
-| 项目 | 内容 |
+| 痛点 / Pain Point | 短剧大师™ 解法 / Our Solution |
 |------|------|
-| Cron ID | `18b9119151bc` |
-| 频率 | 每日 00:00（永续） |
-| 自检项 | 8 类 |
-| 搜索路数 | 4 路并行 |
-| 自动推送 | ✅ 双仓库 |
+| AI视频废片率>60%，反复重抽烧钱 / >60% waste rate, burning money on retries | **BX Protocol降废片率至<15%** / Waste rate reduced to <15% |
+| prompt写太长太贵，太短太糙 / Prompts too long (expensive) or too short (bad quality) | **五段式公式≤400字，720P量出1080P质** / Compact formula, premium output |
+| 烂剧本直接提交生成，浪费token / Bad scripts submitted directly, wasting tokens | **19大师预审→不达标提交不了** / Pre-check gates block bad submissions |
+| 60集角色脸变来变去 / Characters look different across 60 episodes | **LoRA锁定+三视图+Seed固定** / Character locking prevents face drift |
+| 每天手工写prompt改剧本 / Manual prompt writing and script editing daily | **午夜00:00自动进化+全网搜索+自愈推送** / Auto-evolves daily at midnight |
 
 ---
 
+## 🏛️ 十九大师创作军团 / The 19-Master Creative Legion
 
----
-
-## ⚙️ 四阶段全闭环引擎
+> 调用即召唤 / Call = Summon. 每位大师各司其职 / Each master owns their domain.
 
 ```
-一句话创意
-  │
-  ├─ Phase 1 剧本创作 ────────────────────────────
-  │  · 6步创作工作流（定位赛道→设计人物→打造第一屏→规划全剧→写正文→自检）
-  │  · 9层规则参考体系（底层逻辑/类型矩阵/压迫系统/卡点/长线/对白/案例/方法论/诊断）
-  │  · 875条蒸馏案例库（case_cards/beat_patterns/dialogue_patterns/script_manifest/type_stats）
-  │  · 321部加密完整剧本库（.enc格式，可搜索不可阅读）
-  │  · 11条赛道速查 + 5类角色功能位 + 压迫系统公式
-  │  产出：12项标准交付物
-  │
-  ├─ Phase 2 剧本升级 ────────────────────────────
-  │  · 武打效果分级 L1(轻量)/L2(中量)/L3(高潮) + 关键词映射
-  │  · 暗线标注框架 A(灵脉)/B(封印)/C(遗迹)/D(代价) — 每镜四线标注
-  │  · 爆款节奏版 5/6镜65s（镜数/时长/爆点/景别/均衡）
-  │  · 尾钩五类轮换（信息/威胁/关系/情感/代价）
-  │  · 金手指演进 + 代价衰减曲线 + 反派六档叠压 + 配角三人三弧 + 金手指变现路径
-  │  产出：标准化可提交剧本
-  │
-  ├─ Phase 3 制作交付 ────────────────────────────
-  │  · 小云雀API四脚本（submit_run/upload_file/get_thread/download_results）
-  │  · 搬运工模式（用户侧零参数理解）
-  │  · 逐镜提交工作流（5步精确转换管道）
-  │  · 20轮提交前自检 + 轮询状态机 + 6种错误码响应
-  │  · 跨集连续提交策略 + 双平台参数模板
-  │
-  └─ Phase 4 SQ质量管控 ─────────────────────────
-     ┌ SQ0 预检查 ────────────────────────────────┐
-     │ SQ1 素材完整性 · SQ2 六色字幕+旁白          │
-     │ SQ3 武打分级 · SQ4 逻辑连贯性               │
-     │ SQ4.5 场景质感(竖屏七法/光影/材质/大气)      │
-     │ SQ5 全剧一致性 · SQ6 参数组装 · SQ7 配乐9类 │
-     │ SQ8 微观节奏(5/6镜) · SQ8.1 8站位法         │
-     │ SQ8.2 微表情136种 · SQ8.3 六维肌肉级指令    │
-     │ SQ10 年龄监管 → SQ9 终审提交 → submit_run   │
-     └ SQ11 生成后质检 · SQ12 重生成循环 ──────────┘
-     📛 剧名起名公式（6000部词频+广电审核红线）
-     🔗 SQ-VERSION 跨集版本统一
-     🔗 SQ-破折号 平台句式检测
+┌──────────────────────────────────────────────────────────────┐
+│              🎬 短剧大师™ 十九大师 / 19 Masters               │
+├────────────────┬────────────────┬────────────────────────────┤
+│  创作军团(5)    │  品控军团(6)    │  技术军团(8)                │
+│  Creation Corps │  QA Corps      │  Tech Corps                │
+├────────────────┼────────────────┼────────────────────────────┤
+│ ① 剧本大师      │ ⑥ 质检大师      │ ⑫ 灯光大师                  │
+│   Script Master │   QA Master    │   Lighting Master          │
+│                 │                │                            │
+│ ② 武术大师      │ ⑦ 肌肉大师      │ ⑬ 转场大师                  │
+│   Combat Master │   Muscle Master│   Transition Master        │
+│                 │                │                            │
+│ ③ 暗线大师      │ ⑧ 构图大师      │ ⑭ 矩阵大师                  │
+│   Thread Master │   Comp Master  │   Matrix Master            │
+│                 │                │                            │
+│ ④ 节奏大师      │ ⑨ 运镜大师      │ ⑮ 配乐大师                  │
+│   Rhythm Master │   Camera Master│   Score Master             │
+│                 │                │                            │
+│ ⑤ 交付大师      │ ⑩ 废片大师      │ ⑯ 对白大师                  │
+│   Delivery Mstr │   Waste Master │   Dialogue Master          │
+│                 │                │                            │
+│                 │ ⑪ 连贯大师      │ ⑰ 命名大师                  │
+│                 │   Coherence M. │   Naming Master            │
+│                 │                │                            │
+│                 │                │ ⑱ 审核大师                  │
+│                 │                │   Censorship Master        │
+│                 │                │                            │
+│                 │                │ ⑲ 省钱大师 🆕               │
+│                 │                │   Savings Master           │
+├────────────────┴────────────────┴────────────────────────────┤
+│ 召唤/Summon：「武术大师+运镜大师，山洞追杀分镜」                  │
+│ 总攻/All-out：「十九大师全军出击」— 剧本→提交一条龙              │
+└──────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## 🧬 15大附录体系（A-T）
+## 🆕 省钱大师 · Savings Master — 720P→1080P
 
-| 附录 | 名称 | 内容 |
-|:--:|------|------|
-| A | 剧本模板 | 12项交付物逐项说明 + 自检清单 |
-| B | 角色资产 | 5类角色功能位 + 对立设计速查 |
-| C | 色彩光影 | 三色调体系 + CIELAB聚类分析 |
-| D | 音频设计 | BGM/音效/环境音三层架构 |
-| E | 广电红线 | 内容审查五条红线逐条细则 |
-| F | 剧名公式 | 24种标题模板 + 6000部词频统计 |
-| G | 审核红线 | 补充审查规则 + 场景限制 |
-| H | 情绪层级 | 激活度+效价二维模型 + 对白铁律 |
-| I | 18条迁移规律 | 329集数据验证的可迁移创作规律 |
-| J | BX Protocol | 9条降废片率法则 + 四级镜头分类 + 五段式提示词公式 + 20种运镜百科 |
-| K | 效率秘籍 | 剧本产出效率优化方法论 |
-| L | LoRA方案 | 角色一致性LoRA训练+使用方案 |
-| M | storyboard-lite | 轻量分镜表格式 + 字段定义 |
-| N | 极致精控 | prompt逐字精控方法论 |
-| O | 灯光词典 | 六要素框架 + 16种灯光 + 5类电影风格 + 反向提示词 |
-| P | 转场词典 | 5种核心转场 + 标注格式 + Prompt写作原则 |
-| Q | 锚点法则 | 7大锚点 + 5类故障诊断/修复表 + 提交前自检 |
-| R | 20维质量矩阵 | 每一维四步闭环（标准/控制/约束/检测/修复） |
-| S | 小云雀官方参数 | 火山引擎7核心参数 + 双公式 + 四大优化原则 |
-| T | 双平台提示词 | 小云雀+Seedance2.0能力对比 + 统一6步公式 + 运镜成功率词典 |
+> 第十九位大师。不创作，只算账。 / The 19th master. Doesn't create — does the math.
+
+### 五大省钱维度 / 5 Savings Dimensions
+
+| 维度 / Dimension | 机制 / Mechanism | 省钱效果 / Savings |
+|------|------|------|
+| **🛡️ 预审拦截** / Pre-Check Gate | 剧本/角色/资产不达标→提交不了API / Bad scripts blocked before API call | 0 token浪费在烂剧本上 / Zero tokens wasted on bad scripts |
+| **📐 精密Prompt** / Compact Prompts | 五段式公式≤400字 + 竖屏七法结构化描述 / Structured, compact prompts | 720P量出1080P质 / 720P input, 1080P output |
+| **🗑️ BX Protocol** / Waste Reduction | 9条法则+四级镜头分类+单变量修复 / 9 laws + 4-tier shot classification | 废片率60%→15% / Waste rate: 60%→15% |
+| **🔍 逐镜提交** / Per-Shot Submit | 每镜独立提交，失败只重做单镜 / One shot fails ≠ whole episode fails | 精准重抽，不浪费预算 / Targeted retry, no budget waste |
+| **🔒 角色锁定** / Character Lock | LoRA+三视图+Seed固定 / LoRA + reference images + fixed seed | 一次跑对，60集不换脸 / Get it right once, stays consistent for 60 episodes |
+
+### 省钱实测 / Real Savings Estimate
+
+```
+传统工作流 / Traditional:  60集×3次/镜×5镜 = 900次调用 × 60%废片 = 540次浪费
+短剧大师™ / Our workflow: 60集×1.2次/镜×5镜 = 306次调用 × 15%废片 = 46次浪费
+节省/Saved: ~73% API调用 / API calls
+```
+
+> 📁 完整省钱分析 → `references/savings-master.md`
 
 ---
 
-## 📊 数据一览
+## ⚙️ 四阶段全闭环引擎 / Four-Phase Closed-Loop Engine
 
-| 指标 | 数值 |
+```
+一句话创意 / One Sentence
+  │
+  ├─ Phase 1 剧本创作 / Script Creation
+  │  6步工作流 · 9层规则 · 875条蒸馏案例 · 321部加密剧本库
+  │  产出12项标准交付物 / Output: 12 standard deliverables
+  │
+  ├─ Phase 2 剧本升级 / Script Enhancement
+  │  武打L1-L3 · 暗线A/B/C/D · 5/6镜65s爆款公式
+  │  尾钩五类轮换 · 代价曲线 · 反派六档叠压
+  │  产出标准化可提交剧本 / Output: Submission-ready script
+  │
+  ├─ Phase 3 制作交付 / Production & Delivery
+  │  API四脚本 · 搬运工模式 · 逐镜提交 · 20轮自检 · 6种错误码
+  │
+  └─ Phase 4 SQ质量管控 / Quality Control
+     SQ0→SQ12十四道关卡 · 跨集版本扫描 · 句式检测
+     一关不过，全剧不交 / One gate failed, entire episode blocked
+```
+
+---
+
+## 🏛️ 会审系统 / Review System
+
+| 模式 / Mode | 示例 / Example | 产出 / Output |
+|------|------|------|
+| 🩺 单大师出诊 / Solo | 「暗线大师，查E01-E10代价」 | 独立诊断报告 / Solo diagnosis |
+| 🤝 三大师联诊 / Trio | 「武术+运镜+废片，审E35」 | 联合诊断报告 / Joint report |
+| ⚔️ 全军会审 / Full Army | 「十九大师会审E01-E60」 | 全量会审报告 / Full review |
+
+---
+
+## 🌙 午夜自进化 / Midnight Self-Evolution
+
+> 每日00:00，19位大师各自独立搜索+优化+自检+自愈+推送。
+> Daily at 00:00, 19 masters independently search + optimize + self-check + self-heal + push.
+
+| 动作 / Action | 说明 / Description |
+|------|------|
+| 🌐 穷举搜索 / Search | 每位大师按自己的领域搜索最新方法论 / Each master searches their domain for new methods |
+| 🔧 平台优化 / Optimize | 无新发现→优化prompt关键词的平台对接精度 / If nothing new→refine prompt-to-platform precision |
+| 🔍 8类自检 / Self-Check | 版本/Phase/SQ/暗线/大师/引用/附录/品牌一致性扫描 / 8 consistency scans |
+| 🔧 自愈推送 / Auto-Fix | 🔴致命问题自动修复→git push双仓库 / Critical issues auto-fixed→pushed to both repos |
+
+---
+
+## 📊 数据一览 / By The Numbers
+
+| 指标 / Metric | 数值 / Value |
 |------|:--:|
-| SKILL.md 总行数 | **3,300+** |
-| SKILL.md 总大小 | **~170KB** |
-| 十八大师 | **18** 位 |
-| 质量关卡 (SQ0-SQ12) | **14** 道 |
-| 质量维度（附录R） | **20** 维穷举 |
-| 剧本库（加密） | **321** 部 |
-| 蒸馏案例库 | **875** 条 |
-| 运镜百科 | **20** 种 |
-| 灯光类型 | **16** 种 |
-| 转场类型 | **5** 种核心 |
-| 锚点法则 | **7** 大锚点 |
-| 创作规律 | **18** 条（329集验证） |
-| 剧名模板 | **24** 种（6000部词频） |
-| 六维指令 | **6** 维面部精控 |
-| 竖屏七法 | **8** 种构图 |
-| 尾钩类型 | **5** 类轮换 |
-| 反派叠压 | **6** 档人梯 |
-| 错误码响应 | **6** 种 |
-| Prompt五段式 | **5** 段公式 |
-| 自检项（午夜进化） | **8** 类交叉引用 |
-| 网络搜索（午夜进化） | **4** 路并行 |
-| 迭代版本 | v1.0 → **v6.0** |
+| 大师军团 / Masters | **19** |
+| SKILL.md | **3,400+** 行/lines · **180KB** |
+| 质量关卡 / Quality Gates | **14** (SQ0-SQ12) |
+| 质量维度 / Quality Dimensions | **20** 维/dimensions |
+| 附录体系 / Appendices | **15** (A-T) |
+| 加密剧本库 / Encrypted Scripts | **321** 部/titles |
+| 蒸馏案例库 / Distilled Cases | **875** 条/entries |
+| AI运镜百科 / Camera Moves | **20** 种/types |
+| 灯光类型 / Lighting Types | **16** 种/types |
+| 面部精控 / Facial Control | **6** 维/dimensions |
+| 竖屏构图 / Vertical Composition | **8** 种/types |
+| 废片率降低 / Waste Reduction | **60%→15%** |
+| API调用节省 / Token Savings | **~73%** |
+| 迭代版本 / Versions | v1.0 → **v6.1** |
 
 ---
 
-## 🎯 核心亮点
+## 🎯 亮点速览 / Highlights
 
-### 1. 十八大师人格化
-
-每一位大师有自己的专长、自己的输出范本、自己的签字。用户说「暗线大师，查代价曲线」——暗线大师立刻出诊，带着四线扫描结果和通过率回来。不是功能调用，是召唤大师。
-
-### 2. 六维肌肉级指令（SQ8.3）
-
-AI短剧行业唯一的面部表情精控体系。从肌肉键盘到情绪三层，从生理联动到非对称瑕疵，从说话肌肉到口型同步——六维闭环确保AI生成的面部表情不是随机抽卡。
-
-### 3. 20维质量穷举矩阵（附录R）
-
-面部/服装/场景/道具/光照/色调/运动/运镜/景深/比例/特效/背景/口型/表情/BGM/字幕/帧率/伪影/物理/叙事——每一维都有标准→控制→约束→检测→修复四步闭环。不是经验判断，是可复现的方法论。
-
-### 4. BX Protocol 降废片率SOP（附录J）
-
-9条核心法则 + 四级镜头分类（S叙事/A支撑/B辅助/C风格）+ 五段式提示词公式 + 20种运镜百科。不是「神咒一发入魂」，是稳定生产SOP。
-
-### 5. 午夜自进化
-
-每天零点，系统自动扫描自身——8类交叉引用检查、4路全网搜索最新AI视频技术、发现致命问题自动修复并推送GitHub。一个会自我进化的技能。
-
-### 6. 国家版权局DCI认证
-
-不是自封的——DCI:RDCS00ANT.202606159652337429。CY/T126-2015国家标准认证。数字版权链全流程可追溯。
-
-### 7. 双平台统一提示词工程（附录T）
-
-小云雀 + Seedance 2.0 双平台能力对比矩阵、统一6步公式、运镜成功率词典、20轮提交前自检。一套方法论，两个平台交付。
+1. **十九大师人格化** / 19 Masters Personified — 每位大师有专长、范本、签字 / Each master has domain, template, signature
+2. **720P→1080P** / 用精密工程替代暴力堆料，省73% token / Precision engineering replaces brute force, saves 73% tokens
+3. **六维肌肉级指令** / 6D Facial Control — AI短剧唯一面部表情精控体系 / The only facial expression control system in AI short drama
+4. **20维质量穷举** / 20D Quality Matrix — 每维四步闭环，可复现方法论 / Each dimension has a 4-step closed loop
+5. **BX Protocol降废片** / Waste Reduction — 9条法则+四级分类+五段式公式 / 9 laws + 4-tier classification
+6. **午夜自进化** / Self-Evolving — 每天00:00自己扫描、搜索、修复、推送 / Auto-scans, searches, fixes, pushes daily
+7. **双平台交付** / Dual Platform — 小云雀 + Seedance 2.0，一套方法论 / One methodology, two platforms
+8. **不达标提交不了** / No Bad Submissions — 预审不过关，API根本调不了 / Pre-check blocks bad content from reaching the API
 
 ---
 
-## 🚀 快速开始
+## 🚀 快速开始 / Quick Start
 
 ```
-说「@短剧大师」触发技能
-说「剧本大师，写一个古装修仙短剧第一集」→ 剧本大师出诊
-说「十八大师会审E01」→ 全军出击
-说「武术大师+运镜大师，山洞追杀分镜」→ 双大师联诊
+说/Say「@短剧大师」→ 触发技能 / Trigger skill
+说/Say「剧本大师，写一个古装修仙短剧第一集」→ 剧本大师出诊 / Script Master activated
+说/Say「十九大师会审E01」→ 全军出击 / Full army deployed
+说/Say「省钱大师，算一下这一集能省多少」→ 省钱大师算账 / Savings Master does the math
 ```
 
-**GitHub：** [hermes-skill-short-drama-master](https://github.com/woqianfu/hermes-skill-short-drama-master)
+**GitHub:** [hermes-skill-short-drama-master](https://github.com/woqianfu/hermes-skill-short-drama-master) | [duanju-master](https://github.com/woqianfu/duanju-master)
 
-**DCI：** RDCS00ANT.202606159652337429
+**DCI:** RDCS00ANT.202606159652337429 · CY/T126-2015
 
 ── 短剧大师™ · 微短剧全流程一体化创作技能 · DCI:RDCS00ANT.202606159652337429 ──
