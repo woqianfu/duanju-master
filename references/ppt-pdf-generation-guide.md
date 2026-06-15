@@ -1,71 +1,43 @@
-# PPT/PDF 生成规范 / PPT & PDF Generation Guide
+# PPT/PDF 生成避坑指南 / PPT-PDF Generation Pitfalls Guide
 
-> 短剧大师™ v6.1 配套演示文稿生成标准。每次更新 PPT 时严格遵守。
+> v6.1 迭代中反复踩坑的教训。每次改 PPT 前先读。
 
-## 画布参数 / Canvas
+## 1. CSS 规则丢失
 
-| 参数 | 值 |
-|------|------|
-| 尺寸 | 390 × 844 px（iPhone 14 竖屏比例） |
-| 背景 | 暗色影视风 `linear-gradient(180deg, #0a0a12, #0d0d18 40%, #0a0a12)` |
-| 字体 | PingFang SC / Noto Sans SC / Microsoft YaHei |
-| 主色 | `#D4A843`（暖金）/ `#F0C060`（亮金） |
+**症状**：样式不生效（如页脚变成浏览器默认大小）
 
-## 防溢出铁律 / Anti-Overflow Rules
+**原因**：Python 批量替换 HTML 时可能意外删除 CSS 块
 
-| 规则 | 说明 |
-|------|------|
-| **一页不超过 7 张卡片** | 6 张紧凑卡 + header + footer = ~780px，安全 |
-| **卡片拥挤时去英文行** | 优先保留中文，去掉 `skill-en` 节省 ~20px/卡 |
-| **竖排替代横排** | ASCII 树形横排 → `↓` 箭头竖排，杜绝横向滚动条 |
-| **单框替代双框** | 两个竖排 flow 合并为一个紧凑框 |
-| **Print 锁定高度** | `height: 844px !important; max-height: 844px; overflow: hidden` |
-| **Slide padding** | `34px 20px`（拥挤页可降到 `30px 18px`） |
-| **卡片 padding** | `5px 8px`，margin `1px 0` |
+**检查**：每次改完执行 `grep '\.class-name' file.html` 确认关键规则存在
 
-## 页脚规范 / Footer Rules
+**必保规则**：`.footer-bar` `.slide` `.master-detail` `.flow`
 
-| 规则 | 值 |
-|------|------|
-| 字号 | `0.32rem` — 极细，不喧宾夺主 |
-| 颜色 | `rgba(255,255,255,0.12)` — 几乎融入背景 |
-| 位置 | `position: absolute; bottom: 6px` — 页面最底部 |
+## 2. 页面溢出 → 空白残页
 
-## 暗色一致性 / Dark Theme Consistency
+**修复顺序**：去英文行 → 缩中文到40字内 → 减卡片padding到5px → 减margin到1px → 减slide padding到34px → print CSS强锁844px+overflow:hidden
 
-| 禁止 | 替代方案 |
-|------|------|
-| ❌ 白色边框 `.flow` | ✅ `border: 1px solid rgba(26,26,40,0.5)` |
-| ❌ 亮色 emoji | ✅ 可接受，但不要大面积使用 |
-| ❌ 页顶金色横线太亮 | ✅ `opacity: 0.15`（原来 0.4） |
-| ❌ 版权独立页 | ✅ DCI 编号融入 badge 栏，不独立设页 |
+## 3. 横向改竖向
 
-## 内容重点原则 / Content Focus
+所有流程用竖排 `步骤1<br>说明<br>步骤2<br>说明`，不用 `├─` `└─` ASCII树
 
-| 优先级 | 内容 |
-|:--:|------|
-| 1 | **十九大师逐位展示**（每位中英双行精准技能） |
-| 2 | 会审系统 + 四阶段引擎 + 午夜进化 |
-| 3 | 省钱大师融为第 19 位，不独立设页 |
-| 4 | 版权信息低调处理（封面一行、末尾 badge） |
+## 4. 字体层级
 
-## PDF 导出命令 / Export Command
+页脚 `0.24rem` + `rgba(255,255,255,0.07)`；大师名 `0.92rem`；技能 `0.7rem`；标题 `1.45rem`
+
+## 5. 暗色统一
+
+边框用 `#1a1a28`；flow框用 `rgba(26,26,40,0.5)`；顶部金线 `opacity:0.15`；禁用白色元素
+
+## 6. 生成命令
 
 ```bash
-"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
-  --headless --disable-gpu --no-sandbox \
-  --print-to-pdf="/Users/yan/Desktop/短剧大师vX.X_完整功能介绍.pdf" \
-  --no-pdf-header-footer \
-  "file:///Users/yan/.hermes/skills/短剧大师/assets/短剧大师vX.X_完整功能介绍.html"
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless --disable-gpu --no-sandbox \
+  --print-to-pdf="输出.pdf" --no-pdf-header-footer "file://HTML路径"
 ```
 
-## HTML 必备 CSS / Required CSS
+## 7. 生成后检查
 
-```css
-@page { size: 390px 844px; margin: 0; }
-@media print {
-  body { background: #050508 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-  .slide { break-after: page; page-break-after: always; break-inside: avoid; page-break-inside: avoid; margin: 0 !important; border-radius: 0 !important; width: 390px !important; height: 844px !important; min-height: 844px !important; max-height: 844px !important; overflow: hidden !important; }
-  .slide:last-child { break-after: auto; page-break-after: auto; }
-}
-```
+- [ ] 页数=slide数
+- [ ] 无空白残页
+- [ ] footer小且淡
+- [ ] 无白色横滚条
