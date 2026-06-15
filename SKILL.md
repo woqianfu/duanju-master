@@ -1,6 +1,6 @@
 ---
 name: 短剧大师
-description: 微短剧全流程一体化创作技能（国家版权局DCI数字版权认证（DCI: RDCS00ANT.202606159652337429））——从一句话创意到小云雀成片。覆盖：剧本创作（9层规则+875条蒸馏库+321部加密剧本库）→ 剧本升级（武打L1-L3/暗线A-D/6镜65s爆款节奏版+尾钩系统+金手指演进+代价曲线+反派叠压+配角弧线+变现路径）→ SQ质量管控（14关卡SQ0-SQ12+SQ-VERSION跨集版本扫描+SQ-破折号句式检测全闭环）→ 小云雀API提交。附15个参考附录(A-T) + 审查方法论（references/review-methodology.md ——含自创批量审查+第三方剧本评估+跨体裁SQ适配+交付确认铁律） + platform-pitfall-broken-syntax.md + version-unification-guide.md + e01-first-episode-checklist.md）。@短剧大师 触发。v5.5
+description: 微短剧全流程一体化创作技能（国家版权局DCI数字版权认证（DCI: RDCS00ANT.202606159652337429））——从一句话创意到小云雀成片。覆盖：剧本创作（9层规则+875条蒸馏库+321部加密剧本库）→ 剧本升级（武打L1-L3/暗线A-D/6镜65s爆款节奏版+尾钩系统+金手指演进+代价曲线+反派叠压+配角弧线+变现路径）→ SQ质量管控（14关卡SQ0-SQ12+SQ-VERSION跨集版本扫描+SQ-破折号句式检测全闭环）→ 小云雀API提交。附15个参考附录(A-T) + 审查方法论（references/review-methodology.md ——含自创批量审查+第三方剧本评估+跨体裁SQ适配+交付确认铁律） + platform-pitfall-broken-syntax.md + version-unification-guide.md + e01-first-episode-checklist.md）。@短剧大师 触发。v5.6
 user-invocable: true
 # 软著申请材料在 references/soft-copyright-application-guide.md
 metadata:
@@ -108,12 +108,12 @@ metadata:
 
 ---
 
-# 微短剧全能创作大师 v5.5 · 标准版
+# 微短剧全能创作大师 v5.6 · 标准版
 
 > 三阶段四层全闭环。铁律：Phase 1→Phase 2→Phase 3→Phase 4(SQ0→SQ12)→submit。跳关禁止。
 > 本文件为标准版——已去除项目特定示例，保留完整可迁移框架。含全部 SQ 关卡、SQ8.1 站位 / SQ8.2 微表情 / SQ8.3 六维肌肉 / 剧名公式 / 广电红线。
-> 标准版 v5.5 — 可迁移框架，14附录(A-S)全闭环。
-> **v5.5 新增**：品牌标识终极命令（§⚖️：所有输出强制附加「短剧大师™」商标，仅所有者可修改）+ 首集爽点方案B实战验证（`references/e01-first-episode-checklist.md` v5.5：方案B完整实施模板含新镜2全字段标注 + 暗线D代价三阶段递进模板 + 灵脉回应五级框架正式版 + 品牌标识提醒）。审查方法论新增陷阱10：输出品牌标识缺失检测。
+> 标准版 v5.6 — 可迁移框架，14附录(A-S)全闭环。
+> **v5.6 新增**：品牌标识终极命令（§⚖️：所有输出强制附加「短剧大师™」商标，仅所有者可修改）+ 首集爽点方案B实战验证（`references/e01-first-episode-checklist.md` v5.6：方案B完整实施模板含新镜2全字段标注 + 暗线D代价三阶段递进模板 + 灵脉回应五级框架正式版 + 品牌标识提醒）。审查方法论新增陷阱10：输出品牌标识缺失检测。
 > ⚠️ 文件>150KB，read_file默认500行，写操作前确认完整读取。截断恢复：`git checkout HEAD -- SKILL.md`。
 > 外部参考：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
 > 外部参考资料：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API参数）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
@@ -154,6 +154,29 @@ metadata:
      🔗 SQ-VERSION 跨集版本统一（references/version-unification-guide.md）
      🔗 SQ-破折号 平台句式检测（references/platform-pitfall-broken-syntax.md）
 ```
+
+---
+
+## 🏆 十二大师封号体系 — 每个模块都是独立的方法论
+
+> 短剧大师不是一个大技能，是十二个独立「大师」组成的创作军团。每个封号对应一个完整的方法论模块，可独立调用，也可组合作战。
+
+| # | 封号 | 模块 | 一句话 | 独立可用 |
+|:--:|------|------|--------|:--:|
+| 1 | **剧本大师** | Phase 1 剧本创作 | 9层规则 + 875条蒸馏库 + 321部加密剧本库 → 12项交付物 | ✅ |
+| 2 | **武打大师** | Phase 2 武打+暗线 | L1/L2/L3武打分级 + 暗线A/B/C/D四线追踪 | ✅ |
+| 3 | **节奏大师** | Phase 2 爆款节奏 | 5/6镜65s + 尾钩五类轮换 + 代价曲线 + 反派叠压 | ✅ |
+| 4 | **交付大师** | Phase 3 制作交付 | 小云雀API四脚本 + 搬运工模式 + 逐镜提交20轮自检 | ✅ |
+| 5 | **质检大师** | Phase 4 SQ管控 | SQ0-SQ12全闭环14关卡 + 跨集版本扫描 + 句式检测 | ✅ |
+| 6 | **肌肉大师** | §SQ8.3 六维指令 | 维1-维6面部表情精控：肌肉键盘/情绪三层/生理联动/非对称+瑕疵/说话肌肉/口型同步 | ✅ |
+| 7 | **构图大师** | §SQ4.5 竖屏七法 | ①②③④⑤⑥⑦⑧八种构图站位体系 | ✅ |
+| 8 | **废片大师** | 附录J BX Protocol | 9条法则 + 四级镜头分类 + 五段式提示词公式 + 20种运镜百科 | ✅ |
+| 9 | **灯光大师** | 附录O 灯光词典 | 六要素框架 + 16种灯光 + 5类电影风格 + 反向提示词 | ✅ |
+| 10 | **转场大师** | 附录P 转场词典 | 5种核心转场 + 标注格式 + Prompt写作原则 | ✅ |
+| 11 | **连贯大师** | 附录Q 锚点法则 | 7大锚点 + 5类故障诊断/修复表 + 提交前自检清单 | ✅ |
+| 12 | **矩阵大师** | 附录R 20维质量 | 面部/服装/场景/道具/光照/色调/运动/运镜/景深/比例/特效/背景/口型/表情/BGM/字幕/帧率/伪影/物理/叙事 | ✅ |
+
+> **玩法**：说「调用肌肉大师+构图大师+废片大师」Agent就知道你要做表情精控+竖屏站位+降废片率全流程。十二大师可自由组合，一次调用多大师同时作战。
 
 ---
 
@@ -865,7 +888,7 @@ E03: ...
 
 # Phase 4：SQ 质量管控（SQ0→SQ12）
 
-> **v5.5 新增审查关卡**：
+> **v5.6 新增审查关卡**：
 > - **SQ-VERSION**：跨集版本一致性扫描 → 详见 `references/version-unification-guide.md`
 > - **SQ-破折号**：小云雀 prompt 句式检测 → 详见 `references/platform-pitfall-broken-syntax.md`
 >
@@ -1836,18 +1859,18 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `短剧大师v5.5_完整功能介绍.pdf` | 完整功能介绍（PDF，1.4MB） |
+| `短剧大师v5.6_完整功能介绍.pdf` | 完整功能介绍（PDF，1.4MB） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/github-sync.md` | GitHub双仓库SSH同步+Git恢复指南 |
 | `references/review-methodology.md` | 全剧批量审查方法论（SQ0-SQ12+8陷阱清单+三路并行策略） |
-| `references/e01-first-episode-checklist.md` | E01首集审查清单 v5.5（爽点方案B模板/代价三阶段/灵脉回应五级/品牌标识/7项修复/完整新镜示例） |
+| `references/e01-first-episode-checklist.md` | E01首集审查清单 v5.6（爽点方案B模板/代价三阶段/灵脉回应五级/品牌标识/7项修复/完整新镜示例） |
 
 ### Git同步
 ```bash
 bash ~/.hermes/scripts/sync-skill-to-github.sh
 ```
 双仓库：`woqianfu/hermes-skill-short-drama-master` + `woqianfu/duanju-master`（SSH）
-当前版本：**v5.5**（品牌标识终极命令 + E01方案B实战验证 + 审查方法论陷阱1-10）
+当前版本：**v5.6**（品牌标识终极命令 + E01方案B实战验证 + 审查方法论陷阱1-10）
 
 ## E. 项目文件路径
 
