@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>短剧大师™ v6.0 · 完整功能介绍</title>
+<style>
+:root {
+  --gold: #D4A843; --warm-gold: #F0C060; --bone: #E8DDD0;
+  --dark-bg: #0a0a0f; --card-bg: #111118; --border: #1a1a28;
+  --text: #ccc; --text-dim: #888; --accent: #C44A3A;
+  --purple: #8B5CF6; --cyan: #06B6D4; --green: #22C55E;
+  --slide-w: 390px; --slide-h: 844px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body { background:#050508; color:var(--text); font-family:'PingFang SC','Noto Sans SC','Microsoft YaHei',sans-serif; display:flex; flex-direction:column; align-items:center; }
+
+.slide {
+  width:var(--slide-w); min-height:var(--slide-h); background:linear-gradient(180deg, #0a0a12 0%, #0d0d18 40%, #0a0a12 100%);
+  border:1px solid var(--border); border-radius:12px; margin:24px 0; padding:48px 28px;
+  position:relative; overflow:hidden; display:flex; flex-direction:column; justify-content:center;
+}
+.slide::before { content:''; position:absolute; top:0;left:0;right:0;height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.4; }
+.slide::after { content:''; position:absolute; bottom:0;left:0;right:0;height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); opacity:0.2; }
+
+.cover { text-align:center; }
+.cover .icon { font-size:72px; margin-bottom:16px; }
+.cover h1 { font-size:2.4rem; background:linear-gradient(180deg,var(--warm-gold),var(--gold)); -webkit-background-clip:text; -webkit-text-fill-color:transparent; font-weight:900; letter-spacing:4px; }
+.cover .sub { font-size:1rem; color:var(--text-dim); margin-top:8px; letter-spacing:2px; }
+.cover .version { display:inline-block; margin-top:24px; padding:6px 20px; border:1px solid var(--gold); border-radius:20px; color:var(--gold); font-size:0.85rem; letter-spacing:2px; }
+.cover .dci { margin-top:40px; font-size:0.7rem; color:var(--text-dim); letter-spacing:1px; }
+
+h2 { font-size:1.5rem; color:var(--warm-gold); margin-bottom:8px; font-weight:800; letter-spacing:2px; }
+h3 { font-size:1.1rem; color:var(--gold); margin:16px 0 8px; font-weight:700; }
+p { font-size:0.92rem; line-height:1.6; color:var(--text); }
+.stats-row { display:flex; flex-wrap:wrap; gap:8px; margin:16px 0; }
+.stat { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:12px 14px; text-align:center; flex:1; min-width:80px; }
+.stat .num { font-size:1.6rem; font-weight:900; color:var(--warm-gold); }
+.stat .label { font-size:0.7rem; color:var(--text-dim); margin-top:4px; }
+
+.masters-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:6px; margin:12px 0; }
+.master-card { background:var(--card-bg); border:1px solid var(--border); border-radius:6px; padding:10px 8px; text-align:center; }
+.master-card .num { font-size:0.65rem; color:var(--gold); }
+.master-card .name { font-size:0.85rem; color:var(--warm-gold); font-weight:700; margin:3px 0; }
+.master-card .desc { font-size:0.6rem; color:var(--text-dim); line-height:1.4; }
+
+.section-tag { display:inline-block; padding:3px 10px; border-radius:12px; font-size:0.65rem; font-weight:700; letter-spacing:2px; margin-bottom:8px; }
+.tag-create { background:rgba(212,168,67,0.15); color:var(--gold); }
+.tag-quality { background:rgba(139,92,246,0.15); color:var(--purple); }
+.tag-tech { background:rgba(6,182,212,0.15); color:var(--cyan); }
+
+.flow { background:var(--card-bg); border:1px solid var(--border); border-radius:8px; padding:16px; margin:12px 0; font-size:0.75rem; line-height:1.8; font-family:'SF Mono','Menlo',monospace; color:var(--text-dim); white-space:pre; overflow-x:auto; }
+
+.table { width:100%; border-collapse:collapse; margin:12px 0; font-size:0.7rem; }
+.table th { background:var(--card-bg); color:var(--gold); padding:6px 4px; text-align:left; font-weight:700; border-bottom:1px solid var(--border); }
+.table td { padding:5px 4px; border-bottom:1px solid rgba(255,255,255,0.04); color:var(--text); }
+.table .check { color:var(--green); }
+
+.highlight { background:linear-gradient(90deg,rgba(212,168,67,0.1),transparent); border-left:2px solid var(--gold); padding:10px 14px; margin:12px 0; border-radius:0 6px 6px 0; font-size:0.82rem; line-height:1.6; }
+
+.footer-bar { position:absolute; bottom:16px; left:50%; transform:translateX(-50%); font-size:0.55rem; color:var(--text-dim); letter-spacing:2px; white-space:nowrap; }
+.page-num { position:absolute; top:20px; right:28px; font-size:0.65rem; color:var(--text-dim); }
+
+@media print {
+  body { background:white; }
+  .slide { break-after:page; border:1px solid #ddd; background:white; }
+}
+</style>
+</head>
+<body>
+
+<!-- P1: 封面 -->
+<div class="slide cover">
+  <div class="icon">🎬</div>
+  <h1>短剧大师</h1>
+  <div class="sub">Short Drama Master</div>
+  <div class="version">v6.0 · 完整功能介绍</div>
+  <p style="margin-top:32px;font-size:0.9rem;color:var(--bone);line-height:1.8;">
+    从一句话创意到AI微短剧成片<br>
+    全球首个全流程闭环 · 精密工程化 · 自我进化的<br>
+    微短剧创作系统
+  </p>
+  <div class="dci">DCI: RDCS00ANT.202606159652337429 · CY/T126-2015</div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P2: 数据总览 -->
+<div class="slide">
+  <div class="page-num">02</div>
+  <h2>📊 数据总览</h2>
+  <div class="stats-row">
+    <div class="stat"><div class="num">18</div><div class="label">大师军团</div></div>
+    <div class="stat"><div class="num">3,300+</div><div class="label">行SKILL.md</div></div>
+    <div class="stat"><div class="num">170KB</div><div class="label">规则引擎</div></div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">14</div><div class="label">道质量关卡</div></div>
+    <div class="stat"><div class="num">20</div><div class="label">维质量穷举</div></div>
+    <div class="stat"><div class="num">15</div><div class="label">个附录</div></div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">321</div><div class="label">部加密剧本库</div></div>
+    <div class="stat"><div class="num">875</div><div class="label">条蒸馏案例</div></div>
+    <div class="stat"><div class="num">60</div><div class="label">集实战验证</div></div>
+  </div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">20</div><div class="label">种AI运镜</div></div>
+    <div class="stat"><div class="num">16</div><div class="label">种灯光</div></div>
+    <div class="stat"><div class="num">6</div><div class="label">维面部精控</div></div>
+  </div>
+  <div class="highlight">
+    国家版权局DCI数字版权认证 · 每日00:00自我进化 · 双平台（小云雀+Seedance 2.0）统一交付
+  </div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P3: 十八大师全景 -->
+<div class="slide">
+  <div class="page-num">03</div>
+  <h2>🏛️ 十八大师创作军团</h2>
+  <p style="font-size:0.75rem;color:var(--text-dim);margin-bottom:8px;">调用即召唤 · 各司其职 · 可单独出战 · 可全军会审</p>
+  <div class="section-tag tag-create">创作军团</div>
+  <div class="masters-grid">
+    <div class="master-card"><div class="num">①</div><div class="name">剧本大师</div><div class="desc">9层规则+321部剧本库</div></div>
+    <div class="master-card"><div class="num">②</div><div class="name">武术大师</div><div class="desc">L1-L3武打分级指导</div></div>
+    <div class="master-card"><div class="num">③</div><div class="name">暗线大师</div><div class="desc">A/B/C/D四线追踪</div></div>
+    <div class="master-card"><div class="num">④</div><div class="name">节奏大师</div><div class="desc">5/6镜65s爆款公式</div></div>
+    <div class="master-card"><div class="num">⑤</div><div class="name">交付大师</div><div class="desc">小云雀API一键提交</div></div>
+  </div>
+  <div class="section-tag tag-quality">品控军团</div>
+  <div class="masters-grid">
+    <div class="master-card"><div class="num">⑥</div><div class="name">质检大师</div><div class="desc">14道关卡全闭环</div></div>
+    <div class="master-card"><div class="num">⑦</div><div class="name">肌肉大师</div><div class="desc">六维面部表情精控</div></div>
+    <div class="master-card"><div class="num">⑧</div><div class="name">构图大师</div><div class="desc">竖屏七法八站位</div></div>
+    <div class="master-card"><div class="num">⑨</div><div class="name">运镜大师</div><div class="desc">20种AI运镜百科</div></div>
+    <div class="master-card"><div class="num">⑩</div><div class="name">废片大师</div><div class="desc">BX Protocol降废片率</div></div>
+    <div class="master-card"><div class="num">⑪</div><div class="name">连贯大师</div><div class="desc">7大锚点时序管控</div></div>
+  </div>
+  <div class="section-tag tag-tech">技术军团</div>
+  <div class="masters-grid">
+    <div class="master-card"><div class="num">⑫</div><div class="name">灯光大师</div><div class="desc">16种灯光+5类风格</div></div>
+    <div class="master-card"><div class="num">⑬</div><div class="name">转场大师</div><div class="desc">5种核心转场词典</div></div>
+    <div class="master-card"><div class="num">⑭</div><div class="name">矩阵大师</div><div class="desc">20维质量穷举</div></div>
+    <div class="master-card"><div class="num">⑮</div><div class="name">配乐大师</div><div class="desc">九类场景BPM匹配</div></div>
+    <div class="master-card"><div class="num">⑯</div><div class="name">对白大师</div><div class="desc">情绪层级+对白铁律</div></div>
+    <div class="master-card"><div class="num">⑰</div><div class="name">命名大师</div><div class="desc">6000部词频+24种模板</div></div>
+    <div class="master-card"><div class="num">⑱</div><div class="name">审核大师</div><div class="desc">五条红线全量审查</div></div>
+  </div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P4: 会审系统 -->
+<div class="slide">
+  <div class="page-num">04</div>
+  <h2>🏛️ 十八大师会审</h2>
+  <p style="font-size:0.8rem;color:var(--text-dim);">剧本一到 · 全员出诊 · 并行审阅 · 四档排序</p>
+  <div class="flow">剧本提交
+    │
+    ├─ 18位大师并行审阅（各自读各自维度）
+    │   每位大师产出：判定 + 行号 + 修复建议
+    │
+    ├─ 合并为《会审报告》
+    │   🔴阻塞 → 🟠重要 → 🟡建议 → 🟢优秀
+    │
+    └─ 用户决定：修改重审 / 直接通过 / 逐大师修改</div>
+  <table class="table">
+    <tr><th>模式</th><th>示例</th><th>产出</th></tr>
+    <tr><td>🩺 单大师出诊</td><td>「暗线大师，查E01-E10代价」</td><td>独立诊断报告</td></tr>
+    <tr><td>🤝 三大师联诊</td><td>「武术+运镜+废片，审E35」</td><td>联合诊断报告</td></tr>
+    <tr><td>⚔️ 军团会审</td><td>「十八大师会审E01-E60」</td><td>全量会审报告</td></tr>
+  </table>
+  <div class="highlight">
+    每位大师输出独立范本：诊断头部 → 逐项判定 → 📊统计(通过率%) → 大师签字<br>
+    📁 完整范本库：31KB / 18位大师逐一定制
+  </div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P5: 午夜自进化 -->
+<div class="slide">
+  <div class="page-num">05</div>
+  <h2>🌙 午夜自进化系统</h2>
+  <p style="font-size:0.8rem;color:var(--text-dim);">每日00:00 · 自动扫描 · 自动搜索 · 自动修复 · 自动推送</p>
+  <div class="flow">午夜00:00触发
+    │
+    ├─ 🔍 8类逻辑自检
+    │   版本一致性 · Phase引用闭合 · SQ关卡完整性
+    │   暗线术语统一 · 18大师覆盖 · 交叉引用断裂
+    │   附录编号连续 · 品牌标识合规
+    │
+    ├─ 🌐 4路全网搜索
+    │   AI视频新技术 · 小云雀/即梦更新
+    │   Seedance更新 · 新平台新工具
+    │
+    ├─ 🔧 自愈修复
+    │   🔴致命问题自动修复 → git push
+    │   🟡建议写入report等确认
+    │
+    └─ 📊 输出《午夜进化报告》</div>
+  <div class="stats-row">
+    <div class="stat"><div class="num">每日</div><div class="label">00:00执行</div></div>
+    <div class="stat"><div class="num">8类</div><div class="label">逻辑自检</div></div>
+    <div class="stat"><div class="num">4路</div><div class="label">全网搜索</div></div>
+  </div>
+  <div class="highlight">一个会自我进化的技能。不是写完就完——是每天都在变得更自洽。</div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P6: DCI认证 -->
+<div class="slide">
+  <div class="page-num">06</div>
+  <h2>🛡️ 国家版权局认证</h2>
+  <p style="font-size:0.8rem;color:var(--text-dim);">DCI数字版权 · 法律保护 · 全网可追溯</p>
+  <table class="table">
+    <tr><td>DCI编号</td><td style="color:var(--warm-gold);font-weight:700;">RDCS00ANT.202606159652337429</td></tr>
+    <tr><td>作品名称</td><td>短剧大师微短剧创作系统规则引擎</td></tr>
+    <tr><td>著作权人</td><td>北京创业科创科技中心</td></tr>
+    <tr><td>作品类别</td><td>文字作品</td></tr>
+    <tr><td>认证标准</td><td>CY/T126-2015「数字版权唯一标识符」</td></tr>
+    <tr><td>创作完成</td><td>2026年06月15日</td></tr>
+    <tr><td>DCI申领</td><td>2026年06月15日 17:48:36</td></tr>
+  </table>
+  <div class="highlight">任何未经授权的复制、分发、修改、嵌入AI训练数据集均构成侵权。DCI编号全网可查。</div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P7: 四阶段引擎 -->
+<div class="slide">
+  <div class="page-num">07</div>
+  <h2>⚙️ 四阶段全闭环引擎</h2>
+  <div class="flow">一句话创意
+    │
+    ├─ Phase 1 剧本创作
+    │  6步工作流 · 9层规则 · 875条蒸馏 · 321部加密剧本
+    │  产出：12项标准交付物
+    │
+    ├─ Phase 2 剧本升级
+    │  武打L1-L3 · 暗线A/B/C/D · 5/6镜65s爆款节奏
+    │  尾钩五类轮换 · 代价曲线 · 反派叠压 · 配角弧线
+    │  产出：标准化可提交剧本
+    │
+    ├─ Phase 3 制作交付
+    │  API四脚本 · 搬运工模式 · 逐镜提交
+    │  20轮自检 · 6种错误码 · 跨集策略
+    │
+    └─ Phase 4 SQ质量管控
+       SQ0→SQ12 十四道关卡
+       跨集版本扫描 + 句式检测
+       一关不过 · 全剧不交</div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P8: 附录体系 -->
+<div class="slide">
+  <div class="page-num">08</div>
+  <h2>🧬 15大附录体系</h2>
+  <table class="table">
+    <tr><th>#</th><th>名称</th><th>核心</th></tr>
+    <tr><td>A</td><td>剧本模板</td><td>12项交付物+自检清单</td></tr>
+    <tr><td>B</td><td>角色资产</td><td>5类功能位+对立设计</td></tr>
+    <tr><td>C</td><td>色彩光影</td><td>三色调+CIELAB聚类</td></tr>
+    <tr><td>D</td><td>音频设计</td><td>BGM/音效/环境三层</td></tr>
+    <tr><td>E</td><td>广电红线</td><td>五条红线逐条细则</td></tr>
+    <tr><td>F</td><td>剧名公式</td><td>24种模板+6000部词频</td></tr>
+    <tr><td>G</td><td>审核红线</td><td>补充审查+场景限制</td></tr>
+    <tr><td>H</td><td>情绪层级</td><td>激活度+效价二维模型</td></tr>
+    <tr><td>I</td><td>18条规律</td><td>329集数据验证</td></tr>
+    <tr><td>J</td><td>BX Protocol</td><td>降废片率SOP+20运镜</td></tr>
+    <tr><td>K</td><td>效率秘籍</td><td>产出效率优化</td></tr>
+    <tr><td>L</td><td>LoRA方案</td><td>角色一致性训练</td></tr>
+    <tr><td>M</td><td>分镜表</td><td>轻量storyboard格式</td></tr>
+    <tr><td>N</td><td>极致精控</td><td>prompt逐字方法论</td></tr>
+    <tr><td>O</td><td>灯光词典</td><td>16种灯光+5类风格</td></tr>
+    <tr><td>P</td><td>转场词典</td><td>5种转场+标注格式</td></tr>
+    <tr><td>Q</td><td>锚点法则</td><td>7大锚点+故障诊断</td></tr>
+    <tr><td>R</td><td>20维矩阵</td><td>每维四步闭环</td></tr>
+    <tr><td>S</td><td>小云雀参数</td><td>7核心参数+双公式</td></tr>
+    <tr><td>T</td><td>双平台工程</td><td>统一6步公式+Seedance</td></tr>
+  </table>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P9: 核心亮点 -->
+<div class="slide">
+  <div class="page-num">09</div>
+  <h2>🎯 七大核心亮点</h2>
+  
+  <div class="highlight"><strong>1. 十八大师人格化</strong><br>每一位大师有自己的专长、范本、签字。不是功能调用，是召唤大师。</div>
+  <div class="highlight"><strong>2. 六维肌肉级指令</strong><br>AI短剧行业唯一的面部表情精控体系。肌肉键盘→情绪三层→生理联动→非对称瑕疵→口型同步。</div>
+  <div class="highlight"><strong>3. 20维质量穷举矩阵</strong><br>每一维四步闭环（标准→控制→约束→检测→修复）。可复现的方法论，不是经验判断。</div>
+  <div class="highlight"><strong>4. BX Protocol降废片率</strong><br>9条法则+四级镜头分类+五段式公式+20种运镜百科。稳定生产SOP，不是神咒一发入魂。</div>
+  <div class="highlight"><strong>5. 午夜自进化</strong><br>每天零点8类自检+4路搜索+自动修复+推送。会自我进化的技能。</div>
+  <div class="highlight"><strong>6. DCI数字版权认证</strong><br>国家版权局CY/T126-2015标准。DCI全网可查。法律保护。</div>
+  <div class="highlight"><strong>7. 双平台统一交付</strong><br>小云雀+Seedance 2.0。一套方法论，两个平台产出。运镜成功率词典。</div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+<!-- P10: 版本历程+结尾 -->
+<div class="slide cover">
+  <div class="page-num">10</div>
+  <h2 style="margin-bottom: 16px;">版本历程</h2>
+  <div style="font-size:0.7rem;color:var(--text-dim);line-height:2;text-align:left;margin:0 auto;max-width:280px;">
+    v1.0 → 技能诞生，三阶段四层闭环<br>
+    v3.0 → 875条蒸馏库+321部加密剧本<br>
+    v4.0 → 标准版，15附录A-O<br>
+    v5.0 → 附录P-T，双平台工程<br>
+    v5.2 → 审查方法论+平台兼容检测<br>
+    v5.4 → DCI数字版权认证<br>
+    v5.5 → 方法论溯源暗纹系统<br>
+    v5.6 → 十二大师封号体系<br>
+    v5.7 → 十八大师封号体系<br>
+    v5.8 → 十八大师会审系统<br>
+    v5.9 → 独立输出范本(31KB)<br>
+    <strong style="color:var(--warm-gold);">v6.0 → 门面重写 · 全面展示</strong>
+  </div>
+  <p style="margin-top:36px;font-size:1rem;color:var(--bone);">
+    🎬 短剧大师™<br>
+    <span style="font-size:0.8rem;color:var(--text-dim);">从一句话创意到AI微短剧成片</span>
+  </p>
+  <div class="dci">DCI: RDCS00ANT.202606159652337429</div>
+  <div class="footer-bar">── 短剧大师™ · 微短剧全流程一体化创作技能 ──</div>
+</div>
+
+</body>
+</html>

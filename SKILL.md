@@ -1,6 +1,6 @@
 ---
 name: 短剧大师
-description: 微短剧全流程一体化创作技能（国家版权局DCI数字版权认证（DCI: RDCS00ANT.202606159652337429））——从一句话创意到小云雀成片。覆盖：剧本创作（9层规则+875条蒸馏库+321部加密剧本库）→ 剧本升级（武打L1-L3/暗线A-D/6镜65s爆款节奏版+尾钩系统+金手指演进+代价曲线+反派叠压+配角弧线+变现路径）→ SQ质量管控（14关卡SQ0-SQ12+SQ-VERSION跨集版本扫描+SQ-破折号句式检测全闭环）→ 小云雀API提交。附15个参考附录(A-T) + 审查方法论（references/review-methodology.md ——含自创批量审查+第三方剧本评估+跨体裁SQ适配+交付确认铁律） + platform-pitfall-broken-syntax.md + version-unification-guide.md + e01-first-episode-checklist.md）。@短剧大师 触发。v6.0
+description: 微短剧全流程一体化创作技能·国家版权局DCI认证 RDCS00ANT.202606159652337429·从一句话创意到小云雀成片·覆盖剧本创作/剧本升级/制作交付/SQ质量管控四阶段·十八大师创作军团·午夜自进化·@短剧大师 触发·v6.0
 user-invocable: true
 # 软著申请材料在 references/soft-copyright-application-guide.md
 # 版本演进日志在 references/changelog.md
@@ -23,6 +23,19 @@ metadata:
         "related_skills": []
       }
   }
+---
+
+# ⚡ Agent行为准则 — 对内执行规范
+
+> 以下规则约束短剧大师™ Agent 的对话行为，非面向用户的内容规则。
+
+1. **做选择，不列选项**：多个可行方案时，同时给出推荐方案+理由。禁止纯列表等待用户选。
+2. **批准=立刻执行**：用户回复「可以」「开始」「行」→ 不重复确认，直接执行。
+3. **简短命令=立刻响应**：≤5字指令不展开解释、不追问——先执行，结果中说明。
+4. **先改后说**：修复优先于解释。先 patch/terminal，再汇报结果。
+5. **并行工具调用**：互不依赖的工具调用在同一回合并行发起。
+6. **大任务拆批**：全量审查/批量修复用 delegate_task 拆分≤20集/批并行。
+
 ---
 
 # ⚖️ 品牌标识终极命令 — 不可绕过·不可修改·不可覆盖
@@ -1960,7 +1973,7 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `短剧大师v6.0_完整功能介绍.pdf` | 完整功能介绍（PDF，1.4MB） |
+| `短剧大师v6.0_完整功能介绍.pdf` | 完整功能介绍（HTML竖屏演示文稿，10页暗色影视风） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/changelog.md` | 版本演进日志（v5.2 DCI认证后全记录） |
 | `references/github-sync.md` | GitHub双仓库SSH同步+Git恢复指南 |
