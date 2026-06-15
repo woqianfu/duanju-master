@@ -362,6 +362,21 @@ metadata:
 
 > Phase 1 核心任务：**从一句话创意到12项可交付的剧本项目包**。调用本技能的内置创作资产（9篇规则参考 + 875条蒸馏案例 + 321部加密剧本）。
 
+## 📁 参考文件索引 / Reference Index
+
+| 文件 | 内容 |
+|------|------|
+| `references/e01-first-episode-checklist.md` | E01首集审查清单（方案B实战验证+7项修复+暗线D模板+灵脉五级） |
+| `references/masters-output-templates.md` | 19大师独立输出范本（31KB，每位含暗纹+统计+签名） |
+| `references/masters-self-evolution.md` | 19大师自进化矩阵（搜索方向+穷举关键词+优化策略） |
+| `references/savings-master.md` | 省钱大师完整定义（5大省钱维度+省钱计算器+会审模板） |
+| `references/review-methodology.md` | 审查方法论（SQ0-SQ12批量审查+第三方剧本评估+跨体裁适配） |
+| `references/platform-pitfall-broken-syntax.md` | 平台句式陷阱（破折号断裂检测+修复策略） |
+| `references/version-unification-guide.md` | 版本统一指南（跨集版本一致性方法论） |
+| `references/presentation-design-guidelines.md` | PPT/PDF设计规范（9:16竖屏+Chrome无头渲染+@page CSS） |
+| `references/soft-copyright-application-guide.md` | DCI版权登记指南 |
+| `references/changelog.md` | 版本演进日志 |
+
 ## 1.0 创作工作流（6步法）
 
 ```

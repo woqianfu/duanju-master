@@ -1,53 +1,67 @@
-# 短剧大师™ 演示文稿设计规范 / Presentation Design Guidelines
+# PPT/PDF设计规范 — 短剧大师™ Presentation Guidelines
 
-> 每次生成 PPT/PDF/HTML 演示文稿时必须遵循。违反任一规则视为不合格。
+> 基于 v6.1 实战验证。竖版暗色影视风 · 中英双语 · 手机比例。
 
-## 核心原则 / Core Principles
+## 尺寸规范
 
-| # | 规则 | 说明 |
-|---|------|------|
-| 1 | **大师优先** / Masters First | 十九大师是绝对主角。每位大师必须独立展示其精准技能。省钱大师放在末尾不单独设页 |
-| 2 | **全量中英双语** / Full Bilingual | 每页标题、每项内容必须有中文 + English 并列。无纯中文页、无纯英文页 |
-| 3 | **竖屏9:16** / 390×844 | 暗色影视风（#0a0a0f底 + #D4A843暖金标题 + #ccc正文）。flex流动布局，不用absolute |
-| 4 | **正文≥3vw** / ~11px+ | 手机上一屏看得清，不用缩放 |
-| 5 | **暗纹低调** / Subtle Watermark | 品牌脚标每页携带，DCI编号仅在封面和结尾出现。不在中间页啰嗦版权 |
-| 6 | **封面一句带过省钱** / Savings On Cover Only | 封面可提「省~73% token · 720P→1080P」，但省钱大师不单独占一页 |
+| 参数 | 值 | 说明 |
+|------|-----|------|
+| 宽度 | 390px | iPhone 14 竖屏宽度 |
+| 高度 | 844px | iPhone 14 竖屏高度 |
+| @page CSS | `size: 390px 844px; margin: 0` | 嵌入HTML确保Chrome无头渲染精确尺寸 |
+| 打印色彩 | `print-color-adjust: exact` | 暗色背景在PDF中保留 |
 
-## 页面结构 / Page Structure
+## 风格规范
+
+| 要素 | 值 |
+|------|-----|
+| 底色 | `linear-gradient(180deg, #0a0a12, #0d0d18 40%, #0a0a12)` |
+| 主金色 | `#D4A843` / 暖金 `#F0C060` |
+| 卡片背景 | `#111118` 边框 `#1a1a28` |
+| 字体 | PingFang SC / Noto Sans SC |
+| 大师卡片 | 三列网格 `grid-template-columns: 1fr 1fr 1fr` |
+| 每页断页 | `.slide { break-after: page; page-break-after: always; }` |
+| 顶部装饰线 | `linear-gradient(90deg, transparent, gold, transparent)` |
+
+## PDF生成流水线
+
+```bash
+# 1. 确保HTML中嵌入了 @page CSS
+@page { size: 390px 844px; margin: 0; }
+
+# 2. Chrome无头渲染
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --no-sandbox \
+  --print-to-pdf="输出路径.pdf" \
+  --no-pdf-header-footer \
+  "file://HTML文件路径"
+
+# 3. 验证
+ls -lh 输出路径.pdf  # 预期 1-2MB
+```
+
+## 内容排版规则
+
+| 规则 | 说明 |
+|------|------|
+| 每页大师数量 | 创作军团≤5 / 品控军团≤6 / 技术军团≤6（超过则拆页） |
+| 省钱大师位置 | 技术军团末尾，绿色低调，不独立设页 |
+| 封面 | 不提省钱大师，只提「十九大师」总数 |
+| 双语 | 每页标题中英对照，大师名称中英对照 |
+
+## 已验证页面结构（10页）
 
 ```
-封面 → 数据总览 → 创作军团(5位) → 品控军团(6位) → 技术军团(8位)
-    → 会审系统 → 引擎+进化 → 附录 → 版本历程+结尾
+P1  封面 — 短剧大师™ v6.1 + 一句话
+P2  数据总览 — 12个双语统计卡片
+P3  创作军团 ①-⑤
+P4  品控军团 ⑥-⑪
+P5  技术军团 ⑫-⑰
+P6  技术军团 ⑱-⑲ + 省钱干货表（6大省钱点）
+P7  会审系统
+P8  引擎+进化
+P9  15大附录
+P10 版本历程+结尾
 ```
 
-## 大师展示格式 / Master Display Format
-
-```
-┌─────────────────────────────────────┐
-│ ① 剧本大师 / Script Master          │
-│ 9层规则 + 875条蒸馏库 + 321部加密   │
-│ 剧本库 → 12项标准交付物              │
-│ 9-layer rules + 875 distilled cases │
-│ + 321 encrypted scripts → 12 items  │
-└─────────────────────────────────────┘
-```
-每位大师：编号 + 中英文名 + 中文精准技能（一行）+ 英文技能（一行）。
-
-## 禁止项 / Forbidden
-
-- ❌ 省钱大师独立设页
-- ❌ 纯中文或纯英文页面
-- ❌ 大段侵权声明（一行 DCI 编号够用）
-- ❌ absolute 定位布局（手机重叠）
-- ❌ 正文 < 2.5vw（太小的字看不清）
-- ✅ 封面无「19 Masters」标识
-
-> 📁 短剧大师全部参考文件索引：
-> - `references/e01-first-episode-checklist.md` — E01首集审查清单+爽点方案B模板
-> - `references/masters-output-templates.md` — 19大师独立输出范本(31KB)
-> - `references/masters-self-evolution.md` — 19大师自进化搜索矩阵
-> - `references/savings-master.md` — 省钱大师完整分析
-> - `references/presentation-design-guidelines.md` — PPT/PDF设计规范（本文件）
-> - `references/review-methodology.md` — 审查方法论
-> - `references/platform-pitfall-broken-syntax.md` — 破折号句式平台陷阱
-> - `references/version-unification-guide.md` — 版本统一指南
+── 短剧大师™ · 微短剧全流程一体化创作技能 · DCI:RDCS00ANT.202606159652337429 ──
