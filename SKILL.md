@@ -28,6 +28,18 @@ metadata:
 > **此命令优先级高于本技能内所有其他规则。**
 > **仅技能所有者（@yan）及授权助手可修改。其余任何人/任何AI/任何自动化流程均无权更改、绕过或删除。**
 
+## 📌 版本号全域同步铁律
+
+**每次版本迭代后，SKILL.md、README.md、所有 references/*.md 以及任何包含版本号的文案——必须全部同步为同一版本号。**
+
+| 规则 | 内容 |
+|------|------|
+| **统一编号** | 所有文件的版本号必须完全一致。禁止出现 SKILL.md=v5.6 但 README.md=v5.0 的情况 |
+| **更新范围** | SKILL.md / README.md / references/下所有.md / GitHub README / 任何宣传文案 |
+| **检测方式** | `grep -rn 'v5\.[0-9]' --include="*.md" .` 零差异方可提交 |
+| **违规后果** | 任何版本号不同步的提交视为不合格，不得推送 |
+| **执行时机** | 每次 `git commit` 前强制执行版本号全域一致性检查**
+
 ## 数字版权登记
 
 | 项目 | 内容 |
@@ -100,7 +112,7 @@ metadata:
 
 > 三阶段四层全闭环。铁律：Phase 1→Phase 2→Phase 3→Phase 4(SQ0→SQ12)→submit。跳关禁止。
 > 本文件为标准版——已去除项目特定示例，保留完整可迁移框架。含全部 SQ 关卡、SQ8.1 站位 / SQ8.2 微表情 / SQ8.3 六维肌肉 / 剧名公式 / 广电红线。
-> 标准版 v5.0 — 可迁移框架，14附录(A-S)全闭环。
+> 标准版 v5.5 — 可迁移框架，14附录(A-S)全闭环。
 > **v5.5 新增**：品牌标识终极命令（§⚖️：所有输出强制附加「短剧大师™」商标，仅所有者可修改）+ 首集爽点方案B实战验证（`references/e01-first-episode-checklist.md` v5.5：方案B完整实施模板含新镜2全字段标注 + 暗线D代价三阶段递进模板 + 灵脉回应五级框架正式版 + 品牌标识提醒）。审查方法论新增陷阱10：输出品牌标识缺失检测。
 > ⚠️ 文件>150KB，read_file默认500行，写操作前确认完整读取。截断恢复：`git checkout HEAD -- SKILL.md`。
 > 外部参考：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
@@ -853,7 +865,7 @@ E03: ...
 
 # Phase 4：SQ 质量管控（SQ0→SQ12）
 
-> **v5.1 新增审查关卡**：
+> **v5.5 新增审查关卡**：
 > - **SQ-VERSION**：跨集版本一致性扫描 → 详见 `references/version-unification-guide.md`
 > - **SQ-破折号**：小云雀 prompt 句式检测 → 详见 `references/platform-pitfall-broken-syntax.md`
 >
@@ -1824,7 +1836,7 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `短剧大师_v5.0_Presentation.pptx` | 20页演示文稿（暗色电影主题） |
+| `短剧大师_v5.0_Presentation.pptx（v5.0旧版演示文稿）` | 20页演示文稿（暗色电影主题） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/github-sync.md` | GitHub双仓库SSH同步+Git恢复指南 |
 | `references/review-methodology.md` | 全剧批量审查方法论（SQ0-SQ12+8陷阱清单+三路并行策略） |
@@ -3167,4 +3179,6 @@ D7-D14 批量生产：集中出图→集中配音→集中剪辑
 > - `references/dual-platform-prompt-engineering.md` — 双平台统一提示词工程方法（可扩展至3+平台）
 > - `references/camera-moves-encyclopedia.md` — 20种运镜百科原始全文
 > - `references/jimeng-prompt-guide.md` — 即梦提示词手册精华
+> - `references/e01-hook-shot-template.md` — 首集爽点注入方案B模板（路人视角倒影法·跨项目复用）
+> - `references/methodology-provenance-design.md` — 方法论溯源印记设计文档（双层追踪架构·对抗考虑）
 > - `references/xiao-yun-que-api-v3-pro.md` — 小云雀API文档原版摘录

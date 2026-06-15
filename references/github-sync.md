@@ -1,47 +1,31 @@
-# 短剧大师 GitHub 发布与同步机制
+# GitHub Dual-Repo Sync & Git Recovery
 
-## 仓库信息
-- **URL**: https://github.com/woqianfu/hermes-skill-short-drama-master
-- **本地路径**: ~/.hermes/skills/短剧大师/
-- **同步脚本**: ~/.hermes/scripts/sync-skill-to-github.sh
+## Repositories
+- **Primary**: `git@github.com:woqianfu/hermes-skill-short-drama-master.git`
+- **Mirror**: `git@github.com:woqianfu/duanju-master.git`
 
-## 同步脚本内容
+## SSH Sync Script
+`~/.hermes/scripts/sync-skill-to-github.sh`:
 ```bash
 #!/bin/bash
-SKILL_DIR="$HOME/.hermes/skills/短剧大师"
-cd "$SKILL_DIR" || exit 1
-
-# Init git if needed
-[ ! -d .git ] && git init && git add SKILL.md && git commit -m "init"
-
-# Get token from credential helper
-TOKEN=*** 'url=https://github.com' | git credential fill 2>/dev/null | grep '^password=' | cut -d= -f2)
-[ -z "$TOKEN" ] && exit 1
-
-# Push
-git remote remove origin 2>/dev/null
-git remote add origin "https://woqianfu:${TOKEN}@github.com/woqianfu/hermes-skill-short-drama-master.git"
-git add SKILL.md
-git commit -m "auto-sync $(date '+%Y-%m-%d %H:%M')" || true
-git push -u origin main 2>&1
+cd "$HOME/.hermes/skills/短剧大师" || exit 1
+git add SKILL.md README.md 2>/dev/null
+git commit -m "auto-sync $(date '+%Y-%m-%d %H:%M')" 2>/dev/null || true
+git push origin main 2>&1
+git push duanju main 2>&1
 ```
 
-## 恢复机制
-如果文件被意外截断/损坏：
+## Git Recovery from File Truncation
+When SKILL.md is truncated by a bad `write_file` (e.g. 2375→112 lines):
 ```bash
 cd ~/.hermes/skills/短剧大师
-git checkout HEAD -- SKILL.md  # 恢复到最后一次提交的版本
+git log --oneline -3                    # Check commits
+git show HEAD:SKILL.md | wc -l          # Verify full version in git
+git checkout HEAD -- SKILL.md           # Restore
 ```
-前提：.git 目录存在且有过成功 commit。
+**Rule**: `git add SKILL.md && git commit` after every successful edit round.
 
-## Cron 任务
-job_id=5e499f7b6ce1，每天 0:00 执行：
-1. 全网搜索最新 AI 视频技巧
-2. 逻辑自洽检查（8 类交叉引用）
-3. 发现新内容→最小化 patch
-4. 有修改→自动执行 sync-skill-to-github.sh 推送
-
-## 注意事项
-- git credential helper 需要有有效的 GitHub token
-- 网络不通时 git push 会超时，不影响本地 commit
-- SKILL.md 是大文件（~155KB），read_file 默认只读 500 行——操作前必须检查行数避免截断
+## PptxGenJS PPT Creation
+Install: `npm install -g pptxgenjs`
+Run with: `NODE_PATH=$(npm root -g) node script.js`
+Output: `~/Desktop/短剧大师_v5.0_Presentation.pptx（v5.0旧版演示文稿）`
