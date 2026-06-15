@@ -330,7 +330,8 @@ metadata:
 - **军团会审**：「十八大师会审E01-E60」→ 全量输出完整会审报告
 - **三大师联诊**：「武术大师+运镜大师+废片大师，审查E35波刃战斗段落」
 
-> 📁 18位大师的完整独立输出范本（含暗纹·统计·签名）→ `references/masters-output-templates.md`
+> 📁 19位大师的完整独立输出范本（含暗纹·统计·签名）→ `references/masters-output-templates.md`
+> 📁 PPT/PDF生成规范（尺寸/配色/CSS/Chrome命令/常见问题）→ `references/ppt-pdf-generation-guide.md`
 > 📁 PPT/PDF演示文稿设计规范 → `references/presentation-design-guidelines.md`
 
 ---
