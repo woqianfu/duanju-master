@@ -35,6 +35,8 @@ metadata:
 4. **先改后说**：修复优先于解释。先 patch/terminal，再汇报结果。
 5. **并行工具调用**：互不依赖的工具调用在同一回合并行发起。
 6. **大任务拆批**：全量审查/批量修复用 delegate_task 拆分≤20集/批并行。
+7. **GitHub提交双语**：所有 commit message 必须 `中文描述 / English description` 格式。中文在前，英文在后，斜杠分隔。禁止纯中文或纯英文提交。
+8. **PPT生成铁律**：9:16竖屏暗色影视风 · 页脚0.32rem淡色不抢眼 · 内容字体≥0.64rem手机可读 · 大师逐位展示精准技能 · 省钱不独立设页 · 中英双语每页对照 · 详见 `references/presentation-design-guidelines.md`。
 
 ---
 
