@@ -360,7 +360,8 @@ metadata:
 ```
 
 > 📁 每位大师的搜索方向+穷举关键词+优化策略 → `references/masters-self-evolution.md`
-> Cron: `job_id=698a49b1e1a1` · 每日00:00 · 永续
+> Cron: `job_id=698a49b1e1a1` · 每日00:00 · 永绪
+> 📁 Cron workdir 配置说明 → `references/cron-workdir-fix.md`
 
 ---
 

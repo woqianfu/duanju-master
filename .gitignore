@@ -2,7 +2,14 @@
 # 加密剧本库不公开分发
 assets/short-writing/full-scripts/
 
+# Node modules
+scripts/node_modules/
+
 # Backup files
 *.original
 *.step1
 *.bak
+
+# Python cache
+__pycache__/
+*.pyc

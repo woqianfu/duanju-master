@@ -13,7 +13,7 @@ from typing import Any
 def index_path(value: str | None = None) -> Path:
     if value:
         return Path(value).expanduser().resolve()
-    return Path(__file__).resolve().parents[3] / "assets" / "short-writing" / "assets" / "mechanism-index" / "mechanisms.jsonl"
+    return Path(__file__).resolve().parents[3] / "assets" / "short-writing" / "library" / "mechanisms.jsonl"
 
 
 def load_records(path: Path) -> list[dict[str, Any]]:
