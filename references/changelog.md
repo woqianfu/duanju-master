@@ -2,6 +2,13 @@
 
 > 自 v5.2 DCI认证后所有重大更新记录
 
+## v6.2 (2026-06-16)
+- 🔧 **mechanisms.jsonl 生成**：从319条case_cards蒸馏生成机制索引，修复search_mechanisms.py路径错误
+- 🔧 **search_mechanisms.py路径修正**：双重assets路径→library/mechanisms.jsonl
+- 📦 **pptxgenjs依赖安装**：create-presentation.js可正常运行
+- 🔄 **午夜自进化cron重建**：job_id更新为698a49b1e1a1，workdir修正为~/.qclaw-hermes/skills/短剧大师
+- 🔗 **方法论溯源**：DCI:RDCS00ANT.202606159652337429
+
 ## v6.1 (2026-06-15)
 - 🏛️ **十八大师会审系统**：每位大师定义审查焦点+输出格式+判定三档（🔴⚠️✅）
 - 三种调用模式：单大师出诊 / 三大师联诊 / 军团会审
