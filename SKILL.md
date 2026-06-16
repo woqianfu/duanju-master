@@ -1,6 +1,6 @@
 ---
 name: 短剧大师
-description: 微短剧全流程一体化创作技能·国家版权局DCI认证 RDCS00ANT.202606159652337429·从一句话创意到小云雀成片·覆盖剧本创作/剧本升级/制作交付/SQ质量管控四阶段·十九大师创作军团·午夜自进化·@短剧大师 触发·v6.2
+description: 微短剧全流程一体化创作技能·国家版权局DCI认证 RDCS00ANT.202606159652337429·从一句话创意到小云雀成片·覆盖剧本创作/剧本升级/制作交付/SQ质量管控四阶段·十九大师创作军团·午夜自进化·@短剧大师 触发·v6.2\n|# 2026.6.17 吸收《发配边关·罪妻开荒养出战神》（22亿播放爆款）分析报告→ references/case-study-fapei-bianguan.md
 user-invocable: true
 # 软著申请材料在 references/soft-copyright-application-guide.md
 # 版本演进日志在 references/changelog.md
@@ -173,6 +173,7 @@ metadata:
 > 外部参考：`references/presentation-design-guidelines.md`（PPT设计规范，10页竖版暗色风，含溢出修复+竖排flow+暗色统一）
 > 外部参考：`references/ppt-pdf-generation-guide.md`（PDF生成流水线，Chrome无头渲染+严格断页+常见问题修复表）
 > 外部参考：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
+> 📁 爆款案例深度分析：`references/case-study-fapei-bianguan.md`（《发配边关·罪妻开荒养出战神》22亿播放，全受众覆盖策略+AI漫剧赛道趋势）
 > 外部参考资料：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API参数）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
 > 📁 PPT/PDF生成实战指南：`references/ppt-pdf-generation-guide.md`（竖版暗色风·字号体系·Chrome无头渲染·防断页·常见陷阱）
 
