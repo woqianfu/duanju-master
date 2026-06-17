@@ -1,4 +1,4 @@
-# 🎬 短剧大师™ · Short Drama Master v6.2.2
+# 🎬 短剧大师™ · Short Drama Master v6.2.4
 
 > **720P的prompt量 → 1080P的成片质量。省一半token，降七成废片。**
 > **720P prompt volume → 1080P final quality. Half the tokens, 70% less waste.**
@@ -7,16 +7,17 @@
 > From one sentence to finished AI short drama. The world's first fully closed-loop, precision-engineered, self-evolving short drama creation system.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-v6.2.2-ff6b35?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Masters-20(4_Corps)-8A2BE2?style=for-the-badge">
-  <img src="https://img.shields.io/badge/SKILL.md-3,500+_lines-2ea44f?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Version-v6.2.4-ff6b35?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Masters-21(4_Corps+Evo)-8A2BE2?style=for-the-badge">
+  <img src="https://img.shields.io/badge/SKILL.md-3,600+_lines-2ea44f?style=for-the-badge">
   <img src="https://img.shields.io/badge/Quality_Gates-14(SQ0--SQ12)-red?style=for-the-badge">
   <img src="https://img.shields.io/badge/Dimensions-20-purple?style=for-the-badge">
   <img src="https://img.shields.io/badge/Appendices-31(A--U)-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Research_Corps-Case_Master_+_6_Team-FF6B35?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Evolution_KPI-03:00_Daily_Audit-00FF88?style=for-the-badge">
   <img src="https://img.shields.io/badge/Scripts-321_encrypted+875_distilled-333?style=for-the-badge">
   <img src="https://img.shields.io/badge/Platforms-Xiaoyunque+Seedance2.0-orange?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Evolving-Daily_02:30-green?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Evolving-Daily_02:30_+_03:00_KPI-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/DCI-RDCS00ANT.202606159652337429-0066CC?style=for-the-badge">
   <img src="https://img.shields.io/badge/Token_Saved-~73%25-brightgreen?style=for-the-badge">
 </p>
