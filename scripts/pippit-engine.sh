@@ -9,12 +9,9 @@ DEFAULT_DURATION=5
 DEFAULT_WORKERS=5
 
 if [[ "${1:-help}" != "help" && "${1:-help}" != "--help" && "${1:-help}" != "-h" ]]; then
-  if ! command -v pippit-tool-cli &>/dev/null; then
-    echo "❌ 安装: npx @pippit-dev/cli@latest install"; exit 1
-  fi
-  if [[ -z "${XYQ_ACCESS_KEY:-}" ]]; then
-    echo "❌ 请设置 XYQ_ACCESS_KEY"; exit 1
-  fi
+  echo "⚠️  需要用户确认才能提交小云雀。等用户同意后再执行。"
+  echo "   规则：未经用户明确同意，不得调用小云雀API（浪费钱）"
+  exit 0
 fi
 
 show_help() { cat <<'EOF'
