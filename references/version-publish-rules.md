@@ -17,27 +17,36 @@
 
 版本号记录在根目录 `VERSION` 文件（纯文本，仅版本号）。
 
-## 推送前必更新清单
+## 每次推送前必须更新的文件
 
 | # | 文件 | 更新内容 | 必做？ |
 |:-:|------|----------|:-----:|
 | 1 | `VERSION` | 写入最新版本号（如 `v6.2.5`） | ✅ |
-| 2 | `SKILL.md` frontmatter | `description` 版本号 + 亮点同步 | ✅ |
-| 3 | `README.md` | 标题版本号 + 所有 shields.io badges | ✅ |
-| 4 | `assets/短剧大师vX.Y.Z_完整功能介绍.html` | 新建，内容同步最新功能 | ✅ |
-| 5 | `assets/短剧大师vX.Y.Z_完整功能介绍.pdf` | 新建，与HTML同步生成 | ✅ |
+| 2 | `SKILL.md` | frontmatter `description` 版本号 + 亮点同步 | ✅ |
+| 3 | `README.md` | 标题版本号 + 所有 badges 同步 | ✅ |
+| 4 | `assets/短剧大师vX.Y.Z_完整功能介绍.html` | 新建，所有新功能/新大师/新亮点同步 | ✅ |
+| 5 | `assets/短剧大师vX.Y.Z_完整功能介绍.pdf` | 新建，与 HTML 同步生成 | ✅ |
 | 6 | GitHub About 描述 | 双仓库（origin + duanju）同步更新 | ✅ |
 
 ## 铁律：外部操作必须用户批准
 
-| 操作 | 触发条件 | 必须先批准？ |
-|------|---------|:----------:|
-| git push | 推送到 origin/duanju | 必须说「双仓更新」 |
-| 小云雀视频生成 | `pippit-engine.sh generate` | 必须说「跑」 |
-| 小云雀故事板提交 | 任何提交到 xyq.jianying.com 的操作 | 必须先出故事板→你看→点头 |
-| 任何消耗 token/积分的行为 | API调用、模型推理 | 必须明确同意 |
+| 操作 | 必须先批准 | 同意关键词 |
+|------|:---------:|-----------|
+| git push | ✅ | 「双仓更新」 |
+| 小云雀API生成视频 | ✅ | 「跑」 |
+| 任何消耗token/积分的行为 | ✅ | 必须明确同意 |
+| 故事板→生成 | ✅ | 先出故事板→你看→点头→才生成 |
 
 **违规后果：用户的钱被浪费，信任破裂。此规则不可违反。**
+
+## 版本号规则
+
+每次提交必须递增小版本号（如 v6.2.1→v6.2.2→v6.2.3）。维护 `VERSION` 文件。三个位置必须同步：
+1. `VERSION` 文件
+2. `SKILL.md` frontmatter description
+3. `README.md` 标题 + shields.io badges
+
+commit 格式：`vX.Y.Z: 中文描述 / English description`
 
 两处必须同步，不能只推一个：
 

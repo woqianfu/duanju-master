@@ -2,7 +2,13 @@
 
 > 自 v5.2 DCI认证后所有重大更新记录
 
-## v6.3 (2026-06-17)\n- 🆕 **吸收爆款案例**：《发配边关·罪妻开荒养出战神》22亿播放分析 → `references/case-study-fapei-bianguan.md`\n- 🔧 **cron时间调整**：每日更新03:00(5e499f7b6ce1)，午夜自进化03:30(18b9119151bc)，避开凌晨API不稳定时段\n- 🔧 **备份移出skills目录**：~/.hermes/backups/ 消除cron同名歧义\n- 📦 **GitHub同步**：双仓库已推送(session-summary已删除)\n\n## v6.2 (2026-06-16)
+## v6.5 (2026-06-17)
+- 🆕 **新增造型大师#22**：角色视觉设计大师，6维参数化+三视图提示词生成
+- 📖 **完整知识库**：GPT-Image-2方法论+4套实战案例解析+填空模板+跨集一致性规则
+- 🔄 **全文档22大师更新**：描述行/封号体系/召唤方式/会审流程/会审标准/报告模板全线刷新
+- 📄 **参考来源**：喵大大AI笔记《别再难住！3D国风仙侠人物设计超简单，附完整提示词》
+
+## v6.4 (2026-06-17)\n- 🆕 **吸收3D国风仙侠人物设计方法论**：GPT-Image-2结构化提示词 → `references/character-design-3d-gpt-image2.md`\n- 💡 **发现技能缺口**：19大师体系中缺少「造型大师」负责角色视觉设计\n- 📄 **参考来源**：喵大大AI笔记《别再难住！3D国风仙侠人物设计超简单，附完整提示词》\n\n## v6.3 (2026-06-17)\n- 🆕 **吸收爆款案例**：《发配边关·罪妻开荒养出战神》22亿播放分析 → `references/case-study-fapei-bianguan.md`\n- 🔧 **cron时间调整**：每日更新03:00(5e499f7b6ce1)，午夜自进化03:30(18b9119151bc)，避开凌晨API不稳定时段\n- 🔧 **备份移出skills目录**：~/.hermes/backups/ 消除cron同名歧义\n- 📦 **GitHub同步**：双仓库已推送(session-summary已删除)\n\n## v6.2 (2026-06-16)
 - 🔧 **mechanisms.jsonl 生成**：从319条case_cards蒸馏生成机制索引，修复search_mechanisms.py路径错误
 - 🔧 **search_mechanisms.py路径修正**：双重assets路径→library/mechanisms.jsonl
 - 📦 **pptxgenjs依赖安装**：create-presentation.js可正常运行
