@@ -13,7 +13,10 @@
 - **禁止** `::before` / `::after` 伪元素——会在 PDF 中产生不可控的横线
 - **禁止** `border` 在 `.slide` 上——PDF 渲染为可见线条
 
-### 页脚
+### 字体/文本渲染
+- **禁止 `-webkit-background-clip:text`** — 手机 PDF 阅读器不兼容，文字变黑块。用 `color: var(--warm-gold)` 纯色代替
+- **禁止 `-webkit-text-fill-color: transparent`** — 同上，导致文字透明→黑块
+- 标题用纯金 `#D4A843` 或 `color: var(--warm-gold)`，不要用渐变
 ```css
 .footer-bar {
   position: absolute; bottom: 6px; left: 50%;
@@ -71,6 +74,8 @@
 |------|------|------|
 | 空白残页（只有页脚） | 内容溢出 844px | 压缩内容或删英文行 |
 | 标题上方有横线 | `::before` 伪元素或渐变背景 | 删除伪元素 + 纯色背景 |
+| 标题文字出现黑块（手机PDF） | `-webkit-background-clip:text` / `-webkit-text-fill-color:transparent` | 用 `color: var(--warm-gold)` 纯色代替渐变裁切 |
+| 多出一页显示残码（如"2: Data"） | 前一页 `</div>` 未闭合或悬浮在页面之间 | 检查 DOM 结构，确保每页 slide 内的 div 成对闭合 |
 | PDF 颜色发白 | `print-color-adjust` 未设 | 加 `-webkit-print-color-adjust: exact` |
 | 内容横向撑出 | `flow` 中 ASCII 树横排 | 改为竖排 `↓` 箭头式 |
 | 标签文字撑出卡片 | `min-width` 不够 | 缩短文字或加大 `min-width` |

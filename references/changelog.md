@@ -2,7 +2,7 @@
 
 > 自 v5.2 DCI认证后所有重大更新记录
 
-## v6.2 (2026-06-16)
+## v6.3 (2026-06-17)\n- 🆕 **吸收爆款案例**：《发配边关·罪妻开荒养出战神》22亿播放分析 → `references/case-study-fapei-bianguan.md`\n- 🔧 **cron时间调整**：每日更新03:00(5e499f7b6ce1)，午夜自进化03:30(18b9119151bc)，避开凌晨API不稳定时段\n- 🔧 **备份移出skills目录**：~/.hermes/backups/ 消除cron同名歧义\n- 📦 **GitHub同步**：双仓库已推送(session-summary已删除)\n\n## v6.2 (2026-06-16)
 - 🔧 **mechanisms.jsonl 生成**：从319条case_cards蒸馏生成机制索引，修复search_mechanisms.py路径错误
 - 🔧 **search_mechanisms.py路径修正**：双重assets路径→library/mechanisms.jsonl
 - 📦 **pptxgenjs依赖安装**：create-presentation.js可正常运行

@@ -34,51 +34,57 @@
 
 ---
 
-## 🏛️ 十九大师创作军团 / The 19-Master Creative Legion
+## 🏛️ 二十大师创作军团 / The 20-Master Creative Legion
 
 > 调用即召唤 / Call = Summon. 每位大师各司其职 / Each master owns their domain.
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│              🎬 短剧大师™ 十九大师 / 19 Masters               │
-├────────────────┬────────────────┬────────────────────────────┤
-│  创作军团(5)    │  品控军团(6)    │  技术军团(8)                │
-│  Creation Corps │  QA Corps      │  Tech Corps                │
-├────────────────┼────────────────┼────────────────────────────┤
-│ ① 剧本大师      │ ⑥ 质检大师      │ ⑫ 灯光大师                  │
-│   Script Master │   QA Master    │   Lighting Master          │
-│                 │                │                            │
-│ ② 武术大师      │ ⑦ 肌肉大师      │ ⑬ 转场大师                  │
-│   Combat Master │   Muscle Master│   Transition Master        │
-│                 │                │                            │
-│ ③ 暗线大师      │ ⑧ 构图大师      │ ⑭ 矩阵大师                  │
-│   Thread Master │   Comp Master  │   Matrix Master            │
-│                 │                │                            │
-│ ④ 节奏大师      │ ⑨ 运镜大师      │ ⑮ 配乐大师                  │
-│   Rhythm Master │   Camera Master│   Score Master             │
-│                 │                │                            │
-│ ⑤ 交付大师      │ ⑩ 废片大师      │ ⑯ 对白大师                  │
-│   Delivery Mstr │   Waste Master │   Dialogue Master          │
-│                 │                │                            │
-│                 │ ⑪ 连贯大师      │ ⑰ 命名大师                  │
-│                 │   Coherence M. │   Naming Master            │
-│                 │                │                            │
-│                 │                │ ⑱ 审核大师                  │
-│                 │                │   Censorship Master        │
-│                 │                │                            │
-│                 │                │ ⑲ 省钱大师 🆕               │
-│                 │                │   Savings Master           │
-├────────────────┴────────────────┴────────────────────────────┤
-│ 召唤/Summon：「武术大师+运镜大师，山洞追杀分镜」                  │
-│ 总攻/All-out：「十九大师全军出击」— 剧本→提交一条龙              │
-└──────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────┐
+│              🎬 短剧大师™ 二十大师 / 20 Masters                   │
+├─────────────────┬─────────────────┬──────────────────────────────┤
+│  研究军团(1)     │  创作军团(5)     │  品控军团(6)                  │
+│  Research Corps │  Creation Corps │  QA Corps                    │
+├─────────────────┼─────────────────┼──────────────────────────────┤
+│ ① 案例大师 🆕   │ ② 剧本大师       │ ⑦ 质检大师                    │
+│   Case Master   │   Script Master │   QA Master                  │
+│                 │                 │                              │
+│                 │ ③ 武术大师       │ ⑧ 肌肉大师                    │
+│                 │   Combat Master │   Muscle Master              │
+│                 │                 │                              │
+│                 │ ④ 暗线大师       │ ⑨ 构图大师                    │
+│                 │   Thread Master │   Comp Master                │
+│                 │                 │                              │
+│                 │ ⑤ 节奏大师       │ ⑩ 运镜大师                    │
+│                 │   Rhythm Master │   Camera Master              │
+│                 │                 │                              │
+│                 │ ⑥ 交付大师       │ ⑪ 废片大师                    │
+│                 │   Delivery Mstr │   Waste Master               │
+│                 │                 │                              │
+│                 │                 │ ⑫ 连贯大师                    │
+│                 │                 │   Coherence M.               │
+├─────────────────┴─────────────────┴──────────────────────────────┤
+│                   技术军团(8) / Tech Corps                        │
+├─────────────────┬─────────────────┬──────────────────────────────┤
+│ ⑬ 灯光大师       │ ⑭ 转场大师       │ ⑮ 矩阵大师                   │
+│  Lighting Master│ Transition Mastr│   Matrix Master              │
+│                 │                 │                              │
+│ ⑯ 配乐大师       │ ⑰ 对白大师       │ ⑱ 命名大师                   │
+│  Score Master   │ Dialogue Master │   Naming Master              │
+│                 │                 │                              │
+│ ⑲ 审核大师       │ ⑳ 省钱大师       │                              │
+│  Censorship Mstr│ Savings Master  │                              │
+├─────────────────┴─────────────────┴──────────────────────────────┤
+│ 案例驱动/Case-driven：「案例大师，找5个古装赘婿爆款→剧本大师，写第一集」 │
+│ 召唤/Summon：「武术大师+运镜大师，山洞追杀分镜」                      │
+│ 总攻/All-out：「二十大师全军出击」— 案例→剧本→提交一条龙              │
+└──────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
 ## 🆕 省钱大师 · Savings Master — 720P→1080P
 
-> 第十九位大师。不创作，只算账。 / The 19th master. Doesn't create — does the math.
+> 第二十位大师。不创作，只算账。 / The 20th master. Doesn't create — does the math.
 
 ### 五大省钱维度 / 5 Savings Dimensions
 
