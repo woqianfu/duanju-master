@@ -53,7 +53,7 @@ metadata:
 
 | 规则 | 内容 |
 |------|------|
-| **统一编号** | 所有文件的版本号必须完全一致。禁止出现 SKILL.md=v6.1 但 README.md=v5.0 的情况 |
+| **统一编号** | 所有文件的版本号必须完全一致。禁止出现 SKILL.md=v6.2 但 README.md=v5.0 的情况 |
 | **更新范围** | SKILL.md / README.md / references/下所有.md / GitHub README / 任何宣传文案 |
 | **检测方式** | `grep -rn 'v[0-9]\.[0-9]' --include="*.md" .` 零差异方可提交 |
 | **违规后果** | 任何版本号不同步的提交视为不合格，不得推送 |
@@ -2062,14 +2062,14 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `short-drama-master-v6.1-showcase.html` | 完整功能介绍（HTML竖屏演示文稿，10页中英双语暗色影视风） |
-| `short-drama-master-v6.1-showcase.pdf` | 竖版PDF出版稿（Chrome无头渲染，1.5MB） |
+| `short-drama-master-v6.2-showcase.html` | 完整功能介绍（HTML竖屏演示文稿，10页中英双语暗色影视风） |
+| `short-drama-master-v6.2-showcase.pdf` | 竖版PDF出版稿（Chrome无头渲染，1.5MB） |
 | `references/ppt-pdf-generation-guide.md` | PPT/PDF生成规范（画布/防溢出/页脚/暗色/导出命令） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/changelog.md` | 版本演进日志（v5.2 DCI认证后全记录） |
 | `references/github-sync.md` | GitHub双仓库SSH同步+Git恢复指南 |
 | `references/review-methodology.md` | 全剧批量审查方法论（SQ0-SQ12+8陷阱清单+三路并行策略） |
-| `references/e01-first-episode-checklist.md` | E01首集审查清单 v6.1（爽点方案B模板/代价三阶段/灵脉回应五级/品牌标识/7项修复/完整新镜示例） |
+| `references/e01-first-episode-checklist.md` | E01首集审查清单 v6.2（爽点方案B模板/代价三阶段/灵脉回应五级/品牌标识/7项修复/完整新镜示例） |
 
 ### Git同步
 详见 `references/github-sync.md`（双remote推送+版本号铁律+pitfalls）
