@@ -69,7 +69,9 @@
 2. **版本号vX.Y残留**：即使frontmatter已更新，正文中可能残留"v6.2"（不含补丁号）引用。检查 `grep -n 'v[0-9]\.[0-9]\b' SKILL.md` ——比frontmatter少一位的版本号多为残留。
 3. **changelog版本超前**：changelog记录的工作（v6.3/6.4/6.5）若VERSION文件未同步，说明版本未推进。标记为🟡待确认。
 4. **README badge漂移**：README中的badge数字与SKILL.md实际值可能不同步（2026-06-22实测：README badge=31附录但SKILL.md实际=20附录）。检查README.md中所有 `img.shields.io/badge/` 行 → 与SKILL.md实际值对比 → 不一致→🟡标记。
-5. **展示层版本滞后**：`assets/短剧大师vX.Y_完整功能介绍.*` 文件名的版本号与VERSION对照。小版本（如v6.2 vs v6.2.4）可接受暂不更新。
+5. **README By The Numbers表格同步**：`README.md` 中「By The Numbers」表格的数字与SKILL.md实际值对比（大师数/附录数/文件行数/节省率等）。2026-06-26实测发现 Masters=19→22, Appendices=15→20, SKILL.md=3,400+→3,800+, Token=73%→75% 等6项不一致。**扫描命令：`grep -E '^\| \*\*[0-9]' README.md | head -20`** → 与SKILL.md实测值逐行对比。
+6. **展示层版本滞后**：`assets/短剧大师vX.Y_完整功能介绍.*` 文件名的版本号与VERSION对照。小版本（如v6.2 vs v6.2.4）可接受暂不更新。
+7. **git推送被拒预检**：push前先 `git fetch origin main` 检查远程是否有新提交。若有则先 `git pull --rebase origin main` 再推送。2026-06-26实测 push被拒 → rebase后冲突过多 → 最终需人工介入。**预防比修复强。**
 
 ## 合并报告格式
 
