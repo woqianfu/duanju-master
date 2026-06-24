@@ -8,18 +8,18 @@
 
 <p align="center">
   <img src="https://img.shields.io/badge/Version-v6.2.4-ff6b35?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Masters-21(4_Corps+Evo)-8A2BE2?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Masters-22(4_Corps+Evo)-8A2BE2?style=for-the-badge">
   <img src="https://img.shields.io/badge/SKILL.md-3,600+_lines-2ea44f?style=for-the-badge">
   <img src="https://img.shields.io/badge/Quality_Gates-14(SQ0--SQ12)-red?style=for-the-badge">
   <img src="https://img.shields.io/badge/Dimensions-20-purple?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Appendices-31(A--U)-blue?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Appendices-20(A--T)-blue?style=for-the-badge">
   <img src="https://img.shields.io/badge/Research_Corps-Case_Master_+_6_Team-FF6B35?style=for-the-badge">
   <img src="https://img.shields.io/badge/Evolution_KPI-03:00_Daily_Audit-00FF88?style=for-the-badge">
   <img src="https://img.shields.io/badge/Scripts-321_encrypted+875_distilled-333?style=for-the-badge">
   <img src="https://img.shields.io/badge/Platforms-Xiaoyunque+Seedance2.0-orange?style=for-the-badge">
   <img src="https://img.shields.io/badge/Evolving-Daily_02:30_+_03:00_KPI-green?style=for-the-badge">
   <img src="https://img.shields.io/badge/DCI-RDCS00ANT.202606159652337429-0066CC?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Token_Saved-~73%25-brightgreen?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Token_Saved-~75%25-brightgreen?style=for-the-badge">
 </p>
 
 ---
@@ -103,7 +103,7 @@
 ```
 传统工作流 / Traditional:  60集×3次/镜×5镜 = 900次调用 × 60%废片 = 540次浪费
 短剧大师™ / Our workflow: 60集×1.2次/镜×5镜 = 306次调用 × 15%废片 = 46次浪费
-节省/Saved: ~73% API调用 / API calls
+节省/Saved: ~75% API调用 / API calls
 ```
 
 > 📁 完整省钱分析 → `references/savings-master.md`
@@ -146,8 +146,8 @@
 
 ## 🌙 午夜自进化 / Midnight Self-Evolution
 
-> 每日00:00，19位大师各自独立搜索+优化+自检+自愈+推送。
-> Daily at 00:00, 19 masters independently search + optimize + self-check + self-heal + push.
+> 每日00:00，22位大师各自独立搜索+优化+自检+自愈+推送。
+> Daily at 00:00, 22 masters independently search + optimize + self-check + self-heal + push.
 
 | 动作 / Action | 说明 / Description |
 |------|------|
@@ -162,11 +162,11 @@
 
 | 指标 / Metric | 数值 / Value |
 |------|:--:|
-| 大师军团 / Masters | **19** |
-| SKILL.md | **3,400+** 行/lines · **180KB** |
+| 大师军团 / Masters | **22** |
+| SKILL.md | **3,800+** 行/lines · **215KB** |
 | 质量关卡 / Quality Gates | **14** (SQ0-SQ12) |
 | 质量维度 / Quality Dimensions | **20** 维/dimensions |
-| 附录体系 / Appendices | **15** (A-T) |
+| 附录体系 / Appendices | **20** (A-T) |
 | 加密剧本库 / Encrypted Scripts | **321** 部/titles |
 | 蒸馏案例库 / Distilled Cases | **875** 条/entries |
 | AI运镜百科 / Camera Moves | **20** 种/types |
@@ -174,7 +174,7 @@
 | 面部精控 / Facial Control | **6** 维/dimensions |
 | 竖屏构图 / Vertical Composition | **8** 种/types |
 | 废片率降低 / Waste Reduction | **60%→15%** |
-| API调用节省 / Token Savings | **~73%** |
+| API调用节省 / Token Savings | **~75%** |
 | 迭代版本 / Versions | v1.0 → **v6.2.4** |
 
 ---

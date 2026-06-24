@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0.0",
+  "updated_at": "2026-06-23",
+  "total_masters": 22,
+  "corps": {
+    "研究军团": {
+      "members": [
+        { "id": 1, "title": "案例大师", "emoji": "🪖", "role": "军团长", "description": "总司令率6将：天网猎手+数据分析师+拆解师+机制提炼师+竞品研究员+趋势预言家", "audit_required": true }
+      ]
+    },
+    "创作军团": {
+      "members": [
+        { "id": 2, "title": "剧本大师", "emoji": "", "role": "", "description": "从一句话创意到12项交付物。9层规则+875条蒸馏库+321部剧本库", "audit_required": true },
+        { "id": 3, "title": "武术大师", "emoji": "", "role": "", "description": "武打动作指导。L1轻量/L2中量/L3高潮三级分级", "audit_required": false },
+        { "id": 4, "title": "暗线大师", "emoji": "", "role": "", "description": "暗线A/B/C/D四线追踪", "audit_required": false },
+        { "id": 5, "title": "节奏大师", "emoji": "", "role": "", "description": "5/6镜60s爆款节奏。尾钩五类轮换", "audit_required": false },
+        { "id": 6, "title": "交付大师", "emoji": "📦", "role": "总督察", "description": "双引擎交付(小云雀API+pippit-tool-cli)", "audit_required": true }
+      ]
+    },
+    "品控军团": {
+      "members": [
+        { "id": 7, "title": "质检大师", "emoji": "", "role": "", "description": "SQ0-SQ12十四道关卡", "audit_required": true },
+        { "id": 8, "title": "肌肉大师", "emoji": "", "role": "", "description": "六维面部表情精控", "audit_required": false },
+        { "id": 9, "title": "构图大师", "emoji": "", "role": "", "description": "竖屏七法八种站位法", "audit_required": false },
+        { "id": 10, "title": "运镜大师", "emoji": "", "role": "", "description": "20种AI运镜百科", "audit_required": false },
+        { "id": 11, "title": "废片大师", "emoji": "", "role": "", "description": "BX Protocol降废片率", "audit_required": false },
+        { "id": 12, "title": "连贯大师", "emoji": "", "role": "", "description": "7大锚点时序管控", "audit_required": false }
+      ]
+    },
+    "技术军团": {
+      "members": [
+        { "id": 13, "title": "灯光大师", "emoji": "", "role": "", "description": "六要素框架+16种灯光+5类电影风格", "audit_required": false },
+        { "id": 14, "title": "转场大师", "emoji": "", "role": "", "description": "5种核心转场+标注格式", "audit_required": false },
+        { "id": 15, "title": "矩阵大师", "emoji": "", "role": "", "description": "20维质量穷举+四步闭环", "audit_required": false },
+        { "id": 16, "title": "配乐大师", "emoji": "", "role": "", "description": "SQ7九类场景配乐", "audit_required": false },
+        { "id": 17, "title": "对白大师", "emoji": "", "role": "", "description": "情绪层级+对白铁律", "audit_required": false },
+        { "id": 18, "title": "命名大师", "emoji": "", "role": "", "description": "剧名起名公式+6000部词频统计", "audit_required": false },
+        { "id": 19, "title": "审核大师", "emoji": "🚩", "role": "总督察", "description": "率6助守五条红线一票否决", "audit_required": true },
+        { "id": 20, "title": "省钱大师", "emoji": "", "role": "", "description": "720P→1080P产出，省75%token", "audit_required": false },
+        { "id": 21, "title": "进化大师", "emoji": "🧬", "role": "", "description": "各军团每日自进化KPI监督，不进化就淘汰", "audit_required": true },
+        { "id": 22, "title": "造型大师", "emoji": "🎨", "role": "", "description": "角色视觉设计6维参数+三视图提示词", "audit_required": false }
+      ]
+    }
+  },
+  "audit_pool": ["案例大师","剧本大师","交付大师","质检大师","审核大师","进化大师"],
+  "evolution_inspector_bridge": {
+    "mutual_audit_candidates": ["案例大师","剧本大师","交付大师","质检大师","审核大师","进化大师"],
+    "darwin_score_targets": ["案例大师","剧本大师","交付大师","质检大师","审核大师","进化大师"],
+    "dynamic_discovery": "evolution-inspector 通过 read_file('references/master-registry.json') 动态加载此表"
+  }
+}
