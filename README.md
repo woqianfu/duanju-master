@@ -7,7 +7,7 @@
 > From one sentence to finished AI short drama. The world's first fully closed-loop, precision-engineered, self-evolving short drama creation system.
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-v6.3.0-ff6b35?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Version-v6.3.1-ff6b35?style=for-the-badge">
   <img src="https://img.shields.io/badge/Masters-22(4_Corps+Evo)-8A2BE2?style=for-the-badge">
   <img src="https://img.shields.io/badge/SKILL.md-3,600+_lines-2ea44f?style=for-the-badge">
   <img src="https://img.shields.io/badge/Quality_Gates-14(SQ0--SQ12)-red?style=for-the-badge">
