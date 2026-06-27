@@ -7,21 +7,31 @@
 
 ## 版本号规则
 
-格式 `vX.Y.Z`（如 `v6.2.4`）：
+格式 `vX.Y.Z`（如 `v6.3.0`）：
 
 | 位置 | 说明 | 示例 |
 |------|------|------|
 | X | 大版本号（架构级变更时+1） | 6 |
-| Y | 功能版本号（新增大师/军团时+1） | 2 |
-| Z | 小版本号（每次提交+1） | 4 |
+| Y | 功能版本号（新增大师/军团时+1） | 3 |
+| Z | 小版本号（每次提交+1） | 0 |
 
 版本号记录在根目录 `VERSION` 文件（纯文本，仅版本号）。
+
+### 🔥 铁律：每次更新后版本号 +0.1
+
+用户明确要求：**每次更新后，在现有版本号上加 0.1。**
+- 示例：v6.3.0 更新后 → v6.3.1 → v6.3.2 → v6.3.3
+- 三个位置必须同步：`VERSION` / `SKILL.md` frontmatter / `README.md`
+- 每轮提交只允许一次版本递增，禁止跳版本号
+- 若一轮包含多次修改（如版本推进 + 省钱基线 + 提交新文件），可合并为一次提交，版本只加一次 0.1
+
+**适用范围**：推送、版本推进、省钱基线更新、新文件提交——每完成一次向用户的更新交付，版本就加 0.1。
 
 ## 每次推送前必须更新的文件
 
 | # | 文件 | 更新内容 | 必做？ |
 |:-:|------|----------|:-----:|
-| 1 | `VERSION` | 写入最新版本号（如 `v6.2.5`） | ✅ |
+| 1 | `VERSION` | 写入最新版本号（如 `v6.3.1`） | ✅ |
 | 2 | `SKILL.md` | frontmatter `description` 版本号 + 亮点同步 | ✅ |
 | 3 | `README.md` | 标题版本号 + 所有 badges 同步 | ✅ |
 | 4 | `assets/短剧大师vX.Y.Z_完整功能介绍.html` | 新建，所有新功能/新大师/新亮点同步 | ✅ |
@@ -39,9 +49,9 @@
 
 **违规后果：用户的钱被浪费，信任破裂。此规则不可违反。**
 
-## 版本号规则
+### 三位置同步规则
 
-每次提交必须递增小版本号（如 v6.2.1→v6.2.2→v6.2.3）。维护 `VERSION` 文件。三个位置必须同步：
+每次版本号变更必须同步以下三个位置：
 1. `VERSION` 文件
 2. `SKILL.md` frontmatter description
 3. `README.md` 标题 + shields.io badges
@@ -118,19 +128,19 @@ git push origin main && git push duanju main
 ## 操作步骤
 
 ```bash
-# 1. 更新 VERSION
-echo "v6.2.5" > VERSION
+# 1. 更新 VERSION（每次+0.1：v6.3.0 → v6.3.1）
+echo "v6.3.1" > VERSION
 
 # 2. 更新 SKILL.md frontmatter（版本号 + description 亮点）
 # 3. 更新 README.md（标题版本号 + 所有 badges）
 # 4. 复制 HTML + 更新内容
-cp assets/短剧大师v6.2.4_完整功能介绍.html assets/短剧大师v6.2.5_完整功能介绍.html
+cp assets/短剧大师v6.3.0_完整功能介绍.html assets/短剧大师v6.3.1_完整功能介绍.html
 # 修改 HTML 内容同步最新功能
 # 5. 生成 PDF（Chrome 无头渲染）
 # 6. 检查 .gitignore 脱敏
 
 # 7. 本地提交
-git add -A && git commit -m "v6.2.5: 功能描述 / English"
+git add -A && git commit -m "v6.3.1: 功能描述 / English"
 
 # 8. 等用户说「双仓更新」→ 推送
 git push origin main && git push duanju main
