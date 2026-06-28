@@ -1,4 +1,4 @@
-# 🎬 短剧大师™ · Short Drama Master v6.3.0
+# 🎬 短剧大师™ · Short Drama Master v6.3.1
 
 > **720P的prompt量 → 1080P的成片质量。省一半token，降七成废片。**
 > **720P prompt volume → 1080P final quality. Half the tokens, 70% less waste.**
@@ -175,7 +175,7 @@
 | 竖屏构图 / Vertical Composition | **8** 种/types |
 | 废片率降低 / Waste Reduction | **60%→15%** |
 | API调用节省 / Token Savings | **~75%** |
-| 迭代版本 / Versions | v1.0 → **v6.3.0** |
+| 迭代版本 / Versions | v1.0 → **v6.3.1** |
 
 ---
 

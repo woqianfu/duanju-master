@@ -194,6 +194,9 @@ metadata:
 > 📁 爆款案例深度分析：`references/case-study-fapei-bianguan.md`（《发配边关·罪妻开荒养出战神》22亿播放，全受众覆盖策略+AI漫剧赛道趋势）
 > 外部参考资料：`references/xiao-yun-que-api-v3-pro.md`（即梦3.0Pro API参数）、`references/jimeng-prompt-guide.md`（即梦提示词公式）
 > 📁 PPT/PDF生成实战指南：`references/ppt-pdf-generation-guide.md`（竖版暗色风·字号体系·Chrome无头渲染·防断页·常见陷阱）
+> 🎬 AI视频流水线行业标杆：`references/openmontage-ai-video-case.md`（OpenMontage·GitHub#1·12流水线·400+Agent·60s皮克斯$1.33·多Agent调度·成本基准）
+> 🧠 MoA四闸门系统：`references/moa-gate-system.md`（Hermes MoA 2.0 · G1剧本闸/G2 Prompt闸/G3分级闸/G4终审闸 · 全开成本$29/剧·ROI 280%）
+> 🏯 仙侠阵法提示词库：`references/xianxia-formation-prompts.md`（16种阵法·逐条提示词·配色速查·5秒分镜样本·Seedance/Kling/小云雀可用）
 
 
 ```
@@ -204,6 +207,10 @@ metadata:
   │  · 875条蒸馏案例库 search_library.py
   │  · 321部加密完整剧本库 search_full_scripts.py
   │  产出：标准短剧项目包（12项交付物）
+  │  ┌── 🧠 G1 MoA剧本闸 ── 质量评分+TOP3缺陷 ──┐
+  │  │  · 评分≥7/10 → 通过                         │
+  │  │  · 评分<7/10 → 退回剧本大师修改             │
+  │  └─────────────────────────────────────────────┘
   │
   ├─ Phase 2 剧本升级 ──────────────────────────────
   │  · 武打效果分级 L1/L2/L3（提示词关键词映射）
@@ -216,6 +223,15 @@ metadata:
   │  · pippit引擎：`scripts/pippit-submit.sh --prompt "..." --ratio 9:16 --resolution 720p --duration 5`
   │  · pippit引擎：自动解析run_id → query-result轮询 → download-result下载
   │  · 典型工作流4场景 · 用户侧核心原则：搬运工模式
+  │  ┌── 🧠 G2 MoA Prompt闸 ── 每镜提交前预检 ───┐
+  │  │  · 信心分≥0.8 → 提交                         │
+  │  │  · 信心分<0.8 → 废片大师修复 → 重审         │
+  │  │  · ROI最高：废片率15%→6%                     │
+  │  └─────────────────────────────────────────────┘
+  │  ┌── 🧠 G3 MoA分级闸 ── 80/15/5精修决策 ──────┐
+  │  │  · MoA从20维矩阵选TOP3精修镜头               │
+  │  │  · 省钱大师确认后执行                         │
+  │  └─────────────────────────────────────────────┘
   │
   └─ Phase 4 SQ质量管控（SQ0→SQ12）─────────────
 │ SQ-VERSION 跨集一致性扫描 · SQ-破折号 句式检测 ──┤
@@ -227,6 +243,9 @@ metadata:
      │ SQ8 微观节奏(5/6镜) · SQ8.1 8站位法          │
      │ SQ8.2 微表情136种 · SQ8.3 六维肌肉级指令     │
      │ SQ10 年龄监管 → SQ9 终审提交 → submit_run     │
+     │ ┌ 🧠 G4 MoA终审闸 ── 提交前最后一关 ───────┐ │
+     │ │ 评分≥8/10 → 提交；否则回SQ重生成         │ │
+     │ └──────────────────────────────────────────┘ │
      └ SQ11 生成后质检 · SQ12 重生成循环 ────────────┘
      📛 剧名起名公式（6000部词频+广电审核红线）
      🔗 SQ-VERSION 跨集版本统一（references/version-unification-guide.md）
@@ -417,6 +436,8 @@ metadata:
 **三路并行：** 数据组（天网+分析师）→ 拆解组（拆解师+提炼师）→ 情报组（竞品+预言家）→ 案例大师合并 → {完整案例分析包} → 剧本大师创作。
 
 **扫6平台：** 抖音/快手/微信/微博/小红书/红果 🆕
+
+> 🔬 **行业标杆案例**：`references/openmontage-ai-video-case.md` — AI视频流水线（GitHub#1·12条流水线·400+Agent·60s皮克斯$1.33）。当用户问及AI视频行业趋势/成本基准/多Agent系统时，案例大师应调出此案例对标。
 
 完整团队作战流程、输出格式、与剧本大师协作细则见 `references/case-master-team-workflow.md`。
 
@@ -2442,8 +2463,8 @@ SQ11 ≥1 🔴。
 | 文件 | 用途 |
 |------|------|
 | `README.md` | 31KB 中英双语项目说明 |
-| `short-drama-master-v6.2-showcase.html` | 完整功能介绍（HTML竖屏演示文稿，10页中英双语暗色影视风） |
-| `short-drama-master-v6.2-showcase.pdf` | 竖版PDF出版稿（Chrome无头渲染，1.5MB） |
+| `短剧大师v6.3.0_完整功能介绍.html` | 完整功能介绍（HTML竖屏演示文稿，10页中英双语暗色影视风） |
+| `短剧大师v6.3.0_完整功能介绍.pdf` | 竖版PDF出版稿（Chrome无头渲染，1.5MB） |
 | `references/ppt-pdf-generation-guide.md` | PPT/PDF生成规范（画布/防溢出/页脚/暗色/导出命令） |
 | `scripts/create-presentation.js` | 生成双语PPT脚本（需pptxgenjs） |
 | `references/changelog.md` | 版本演进日志（v5.2 DCI认证后全记录） |
